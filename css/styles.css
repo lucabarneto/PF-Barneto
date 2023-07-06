@@ -1,0 +1,1088 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* El border-box soluciona el problema que trae el content-box, la opción default */
+
+body {
+  font-family: Roboto_Condensed variant0, sans-serif;
+  background-color: #131212;
+  color: white;
+}
+
+.index__body {
+  /* Grid 1x6 */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-template-areas:
+    "website-navigation"
+    "header-home"
+    "activities"
+    "online-classes"
+    "plans"
+    "footer";
+}
+
+/* links, saco la decoración que tienen por default */
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: white;
+}
+
+a[class~="button--text-black"] {
+  color: #131212;
+}
+
+a[class="link"] {
+  color: #ffe600;
+}
+
+/* margins y paddings */
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4rem;
+}
+
+.padding-section {
+  padding: 9rem 7.5rem;
+}
+
+/* Headings */
+
+.heading {
+  font-family: Archivo, sans-serif;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 3.125rem;
+}
+
+h2 {
+  font-size: 2.375rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.3125rem;
+}
+
+.text-21 {
+  font-size: 1.3125rem;
+}
+
+/* Navigation */
+
+.website-navigation {
+  padding: 0 7.5rem;
+  background-color: #131212;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: website-navigation;
+}
+
+nav ul {
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.website-navigation__logo,
+nav li {
+  height: 4rem;
+  padding: 1.375rem 1.5rem;
+  font-size: 1rem;
+}
+
+nav li {
+  font-family: Archivo, sans-serif;
+}
+
+.website-navigation__link:hover {
+  color: #ffe600;
+  text-decoration: underline;
+}
+
+.website-navigation-mobile {
+  display: none;
+}
+
+/* Header */
+
+.header__text--21 {
+  font-size: 1.3125rem;
+  margin-bottom: 2rem;
+}
+
+.header-home {
+  height: 80vh;
+  background-image: url(../img/home-hero-image.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 0%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  grid-area: header-home;
+}
+
+.header-home > * {
+  margin-left: 9rem;
+}
+
+.header-home__text-decoration {
+  color: #131212;
+  background-color: #ffe600;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.header-about-us {
+  height: 37.5rem;
+  width: 100%;
+  padding: 9rem 7.5rem;
+  background-image: url(../img/about-us--header-background.jpg);
+  text-align: center;
+}
+
+.header-contact {
+  text-align: center;
+}
+
+.header-location {
+  padding: 0 7.5rem;
+  text-align: center;
+}
+
+.header-user {
+  padding: 0 7.5rem;
+}
+
+.login__header {
+  padding: 0 7.5rem;
+  text-align: center;
+}
+
+/* Activities section */
+
+.activities {
+  padding: 9rem 7.5rem;
+  text-align: center;
+  background-color: #333333;
+  /* Grid 4x3 */
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "activities__heading activities__heading activities__heading activities__heading"
+    "activities__weightlift activities__cross activities__boxing activities__yoga"
+    "activities__button activities__button activities__button activities__button";
+  justify-items: center;
+  gap: 1.5rem 1rem;
+  grid-area: activities;
+}
+
+.activities__heading {
+  grid-area: activities__heading;
+}
+
+.activities__weightlift {
+  grid-area: activities__weightlift;
+}
+
+.activities__cross {
+  margin-top: 4rem;
+  grid-area: activities__cross;
+}
+
+.activities__boxing {
+  grid-area: activities__boxing;
+}
+
+.activities__yoga {
+  margin-top: 4rem;
+  grid-area: activities__yoga;
+}
+
+.activities__button {
+  grid-area: activities__button;
+}
+
+.activities__heading,
+.activities__gym-card {
+  margin-bottom: 4rem;
+}
+
+.activities__weightlift__text {
+  margin-top: 1rem;
+}
+
+/* Online Classes section*/
+
+.online-classes {
+  height: 29rem;
+  padding: 0 0 0 7.5rem;
+  background-color: #ffe600;
+  color: #131212;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: online-classes;
+}
+
+.online-classes__image img {
+  height: 100%;
+  width: auto;
+}
+
+/* Plans section */
+
+.plans {
+  padding: 9rem 7.5rem;
+  text-align: center;
+  background-color: #333333;
+  /* Grid 2x3 */
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "plans__heading plans__heading"
+    "plans__button-toggle-container plans__button-toggle-container"
+    "plans__normal-plan plans__thunder-plan";
+  align-items: center;
+  justify-items: center;
+  grid-area: plans;
+}
+
+.plans__button-toggle-container {
+  background-color: #131212;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  grid-area: plans__button-toggle-container;
+}
+
+.plans__gym-plan {
+  width: 24rem;
+  height: 41rem;
+  background-color: #131212;
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.plans__gym-plan__name {
+  font-family: Archivo, sans-serif;
+  font-size: 2.375rem;
+}
+
+.plans__thunder-plan__tag {
+  color: #ffe600;
+  font-weight: 900;
+}
+
+.plans__gym-plan__separator {
+  background-color: white;
+  height: 0.125rem;
+  width: 22rem;
+  margin-top: 0.25rem;
+}
+
+.plans__gym-plan__relevant-info {
+  font-family: Archivo, sans-serif;
+  font-size: 1.3125rem;
+  margin-top: 2rem;
+}
+
+.plans__gym-plan__benefits {
+  padding-left: 0;
+  margin: 1rem 0 0 0;
+}
+
+.plans__gym-plan__benefits > li {
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.plans__heading {
+  margin-bottom: 4rem;
+  grid-area: plans__heading;
+}
+
+.plans__normal-plan {
+  grid-area: plans__normal-plan;
+}
+
+.plans__thunder-plan {
+  grid-area: plans__thunder-plan;
+}
+
+.bi-plans {
+  padding-right: 0.5rem;
+}
+
+/* Values section */
+
+.values {
+  padding: 9rem 7.5rem;
+}
+
+.values-content > div {
+  display: inline-block;
+}
+
+/* Staff section*/
+
+.staff {
+  padding: 9rem 7.5rem;
+  text-align: center;
+  /* Grid 4x3 */
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(3, auto);
+}
+
+.staff > h2 {
+  grid-column: 1/5;
+  margin-bottom: 4rem;
+}
+
+.staff__member {
+  margin-bottom: 2rem;
+}
+
+.staff__member > p {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* Features Section*/
+
+.features {
+  text-align: center;
+  padding: 9rem 7.5rem;
+}
+
+.carousel-item img {
+  margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+}
+
+.carousel-icon-container {
+  background-color: #333333;
+  padding: 0.5rem;
+  border-radius: 100px;
+}
+
+.bi-chevron-left,
+.bi-chevron-right {
+  font-size: 2rem;
+  color: white;
+}
+
+.bi-chevron-left:hover,
+.bi-chevron-right:hover {
+  color: #ffe600;
+}
+
+.features__gym-features__listitem {
+  height: 15.5rem;
+  width: 11.25rem;
+  padding: 3rem 2rem;
+  margin: 3.5rem 1.5rem 0;
+  background-color: #131212;
+  border: 0.0625rem solid white;
+  text-align: center;
+}
+
+.features__gym-features__listitem p {
+  margin-top: 0.5rem;
+}
+
+.features__gym-features {
+  margin: 0 12.75rem;
+  /* Grid 4x2 */
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "features__gym-features__lockers features__gym-features__showers features__gym-features__glove features__gym-features__dumbbell"
+    "features__gym-features__time features__gym-features__staff features__gym-features__gymnastics features__gym-features__air-conditioner";
+  justify-items: center;
+}
+
+.features__gym-features__lockers {
+  grid-area: features__gym-features__lockers;
+}
+
+.features__gym-features__showers {
+  grid-area: features__gym-features__showers;
+}
+.features__gym-features__glove {
+  grid-area: features__gym-features__glove;
+}
+
+.features__gym-features__dumbbell {
+  grid-area: features__gym-features__dumbbell;
+}
+
+.features__gym-features__dumbbell p {
+  margin-top: 0;
+}
+
+.features__gym-features__time {
+  grid-area: features__gym-features__time;
+}
+
+.features__gym-features__staff {
+  grid-area: features__gym-features__staff;
+}
+
+.features__gym-features__gymnastics {
+  grid-area: features__gym-features__gymnastics;
+}
+
+.features__gym-features__air-conditioner {
+  grid-area: features__gym-features__air-conditioner;
+}
+
+.features__gym-features__listitem p {
+  font-family: Archivo, sans-serif;
+  color: white;
+}
+
+/* Information Section*/
+
+.information {
+  background-color: #333333;
+  padding: 9rem 7.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.information__contact-information > ul {
+  padding: 0;
+}
+
+.information__contact-information li {
+  margin-bottom: 1rem;
+}
+
+/* Download section */
+
+.download {
+  padding: 9rem 7.5rem;
+  /* Grid 3x4 */
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+    "download__heading download__heading download__image"
+    "download__benefit__qr download__benefit__qr download__image"
+    "download__benefit__info download__benefit__info download__image"
+    "button__download__google button__download__apple download__image";
+}
+
+.download__heading {
+  grid-area: download__heading;
+}
+
+.download__image {
+  grid-area: download__image;
+}
+
+.download__benefit__qr {
+  grid-area: download__benefit__qr;
+}
+
+.download__benefit__info {
+  grid-area: download__benefit__info;
+}
+
+.button__download__google {
+  grid-area: button__download__google;
+  align-self: center;
+  justify-self: center;
+}
+
+.button__download__apple {
+  grid-area: button__download__apple;
+  align-self: center;
+  justify-self: center;
+}
+
+.download__benefit {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.download__benefit > img {
+  max-width: 4.5rem;
+  max-height: 4.5rem;
+}
+
+.download__benefit > div {
+  padding-left: 2.5rem;
+}
+
+.download__benefit h4 {
+  margin-top: 0;
+}
+
+/* Schedule section */
+
+.schedule {
+  padding: 9rem 7.5rem;
+}
+
+/* Estilos generales de forms */
+
+.form-control {
+  background: transparent;
+  border: thin solid white;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: white;
+}
+
+.form-control:focus {
+  background-color: #333333;
+  color: white;
+}
+
+.form-control:hover {
+  border-color: #ffe600;
+}
+
+/* Contact */
+
+.contact-form__form__control {
+  margin-bottom: 2.5rem;
+}
+
+/* Login */
+
+.login {
+  /* Grid 2x2 */
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "login__header login__aside"
+    "login__section login__aside";
+}
+
+.login__header {
+  grid-area: login__header;
+  align-self: end;
+}
+
+.login__section {
+  padding: 0 7.5rem 9rem;
+  grid-area: login__section;
+}
+
+.login__aside {
+  max-width: 100%;
+  height: auto;
+  grid-area: login__aside;
+}
+
+.login__section__form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+.create-account,
+.control-submit-login {
+  margin-bottom: 2rem;
+  align-self: center;
+  width: auto;
+}
+
+/* Footer*/
+
+footer {
+  background-color: #131212;
+  padding: 9rem 7.5rem 0;
+  /* Grid 3x2 */
+  display: grid;
+  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "footer__social-media footer__navigation-links footer__company-links"
+    "footer__copyright footer__copyright footer__copyright";
+  justify-items: center;
+  grid-area: footer;
+}
+
+.footer ul {
+  padding-left: 0;
+}
+
+.footer__social-media {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  grid-area: footer__social-media;
+}
+
+.footer__navigation-links {
+  grid-area: footer__navigation-links;
+}
+
+.footer__company-links {
+  grid-area: footer__company-links;
+}
+
+.footer__company-links,
+.footer__navigation-links,
+.footer__social-media {
+  margin-bottom: 2rem;
+}
+
+.footer__copyright {
+  text-align: center;
+  grid-area: footer__copyright;
+  justify-self: stretch;
+}
+
+.footer__social-media__address,
+.footer__social-media__logo {
+  text-align: center;
+}
+
+.footer__social-media__media {
+  margin: 3rem 0;
+}
+
+.bi-footer {
+  font-size: 1.75rem;
+  padding: 0 1rem;
+}
+
+.bi-footer:hover {
+  color: #ffe600;
+}
+
+.footer__copyright__separator {
+  height: 0.25rem;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 1rem;
+}
+
+.footer__navigation-links__link:hover {
+  color: #ffe600;
+  text-decoration: underline;
+}
+
+/* Buttons */
+
+.button {
+  height: 4rem;
+  color: #131212;
+  background-color: #ffe600;
+  padding: 1rem 2.5rem;
+  font-size: 1.25rem;
+  font-family: Archivo, sans-serif;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.button__plan,
+.button--toggle,
+.button--collapsed {
+  height: 2.5rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.button--toggle {
+  width: 50%;
+  margin: 0;
+}
+
+.button__plan {
+  margin-top: 2rem;
+}
+
+.button--off {
+  color: white;
+  background-color: #131212;
+}
+
+.button__download__google,
+.button__download__apple {
+  height: 6rem;
+}
+
+.button:hover {
+  background-color: #131212;
+  color: #ffe600;
+  border: thin solid #ffe600;
+}
+
+.button:hover a {
+  color: #ffe600;
+}
+
+/* Table */
+
+table {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+th,
+td {
+  width: 12.5%;
+  height: 3rem;
+  border: thin solid white;
+}
+
+th {
+  background-color: #333333;
+}
+
+/* Mobile */
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+  /* headings */
+
+  h1 {
+    font-size: 2.375rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.3125rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  /* Navigation */
+
+  .website-navigation {
+    display: none;
+  }
+
+  .website-navigation-mobile {
+    display: block;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+  }
+
+  .website-navigation-mobile__navbar {
+    background-color: #131212;
+  }
+
+  .bi-list {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .bi-list:hover {
+    color: #ffe600;
+  }
+
+  .navbar-toggler:focus {
+    border: thin solid #ffe600;
+  }
+
+  .navbar-toggler:focus i {
+    color: #ffe600;
+  }
+
+  .navbar .container-fluid {
+    padding: 0 1rem;
+  }
+
+  /* Header */
+
+  .header-home {
+    height: 80vh;
+    background-image: url(../img/home-hero-image-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+  }
+
+  .header-home > * {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    max-width: calc(100vw - 32px);
+    text-align: center;
+  }
+
+  .header-mobile__text--16 {
+    font-size: 1rem;
+  }
+
+  .header-location {
+    padding: 0 1rem;
+  }
+
+  /* Activities section */
+
+  .activities {
+    padding: 5rem 1rem;
+    /* Grid 1x6 */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+      "activities__heading"
+      "activities__weightlift"
+      "activities__cross"
+      "activities__boxing"
+      "activities__yoga"
+      "activities__button";
+  }
+
+  .activities__gym-card {
+    width: calc(100vw - 32px);
+    max-width: auto;
+  }
+
+  .activities__gym-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .activities__cross,
+  .activities__yoga {
+    margin-top: 0;
+  }
+
+  .activities__heading,
+  .activities__gym-card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Online-classes section */
+
+  .online-classes {
+    height: 29.75rem;
+    height: auto;
+    padding: 0;
+    flex-flow: column nowrap;
+    text-align: center;
+  }
+
+  .online-classes h2 {
+    margin-bottom: 1rem;
+  }
+
+  .online-classes-mobile__content {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .online-classes-mobile__content__text--12 {
+    display: block;
+    font-size: 0.75rem;
+  }
+
+  .online-classes__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Plans section */
+
+  .plans {
+    padding: 5rem 1rem;
+    /* Grid 1x4 */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "plans__heading"
+      "plans__button-toggle-container"
+      "plans__normal-plan"
+      "plans__thunder-plan";
+  }
+
+  .plans__button-toggle-container {
+    height: 2.25rem;
+    width: 10.75rem;
+  }
+
+  .plans__heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .plans__gym-plan {
+    height: 35rem;
+    width: calc(100vw - 32px);
+    max-width: 22.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .plans__gym-plan__separator {
+    width: calc(100% - 32px);
+    margin-top: 0.25rem;
+  }
+
+  .plans__gym-plan__name {
+    font-size: 1.75rem;
+  }
+
+  .plans__gym-plan__relevant-info {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Features section */
+
+  .features {
+    padding: 5rem 1rem;
+  }
+
+  .features__gym-features__listitem {
+    height: 10.625rem;
+    width: calc(100% - 16px);
+    padding: 3rem 2rem;
+    padding: 1rem 0.5rem;
+    margin: 0;
+    background-color: #131212;
+    border: 0.0625rem solid white;
+    text-align: center;
+  }
+
+  .features__gym-features {
+    width: calc(100vw - 32px);
+    margin: 2.5rem 0;
+    /* Grid 2x4 */
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "features__gym-features__lockers features__gym-features__showers" "features__gym-features__glove features__gym-features__dumbbell"
+      "features__gym-features__time features__gym-features__staff" "features__gym-features__gymnastics features__gym-features__air-conditioner";
+    row-gap: 1rem;
+    justify-items: start;
+  }
+
+  .features__gym-features div:nth-child(even) {
+    justify-self: end;
+  }
+
+  /* Information section */
+
+  .information {
+    padding: 5rem 1rem;
+    flex-flow: column nowrap;
+  }
+
+  .information h3 {
+    margin-bottom: 2rem;
+  }
+
+  .information ul {
+    margin-bottom: 2.5rem;
+  }
+
+  .information iframe {
+    width: 100%;
+  }
+
+  /* Footer */
+
+  .footer {
+    padding: 5rem 1rem;
+    /* Grid 2x3 */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "footer__social-media footer__social-media"
+      "footer__navigation-links footer__company-links"
+      "footer__copyright footer__copyright";
+  }
+
+  .footer__social-media__media {
+    margin: 1.5rem 0;
+  }
+
+  .bi-footer {
+    padding: 0 0.5rem;
+  }
+
+  /* Button */
+
+  .button {
+    height: 3rem;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .button--collapsed {
+    height: 2.5rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .button--toggle {
+    height: 2.25rem;
+    padding: 0.5rem 0;
+  }
+}
