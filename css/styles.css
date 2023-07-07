@@ -364,19 +364,10 @@ nav li {
   padding-right: 0.5rem;
 }
 
-/* Values section */
-
-.values {
-  padding: 9rem 7.5rem;
-}
-
-.values-content > div {
-  display: inline-block;
-}
-
 /* Staff section*/
 
 .staff {
+  background-color: #333333;
   padding: 9rem 7.5rem;
   text-align: center;
   /* Grid 4x3 */
