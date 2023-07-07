@@ -640,6 +640,11 @@ nav li {
   grid-area: login__aside;
 }
 
+.login__aside img {
+  height: 100vh;
+  width: 100%;
+}
+
 .login__section__form {
   display: flex;
   flex-flow: column nowrap;
@@ -651,6 +656,15 @@ nav li {
   margin-bottom: 2rem;
   align-self: center;
   width: auto;
+}
+
+.create-account a {
+  font-family: Archivo, sans-serif;
+  font-weight: 700;
+}
+
+.create-account a:hover {
+  text-decoration: underline;
 }
 
 /* Footer*/
