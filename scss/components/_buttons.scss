@@ -1,0 +1,26 @@
+/*Buttons*/
+.button {
+  @extend %button;
+}
+.button__plan,
+.button--toggle {
+  @extend %button-special;
+}
+.button--toggle {
+  @include size(50%, auto);
+  margin: map-get($map: $margins, $key: m0);
+}
+.button__plan {
+  margin-top: map-get($map: $margins, $key: m2);
+}
+.button--off {
+  color: map-get($map: $colors, $key: fff);
+  background-color: map-get($map: $colors, $key: primary);
+}
+.button__download__google,
+.button__download__apple {
+  @extend %button;
+  text-align: $text-center;
+  @include size(13rem, 6rem);
+  @include paddings(1rem, 1.5rem, 1rem, 1.5rem);
+}

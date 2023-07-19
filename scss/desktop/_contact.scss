@@ -1,0 +1,13 @@
+/*Contact*/
+/*Header*/
+.header-contact {
+  text-align: $text-center;
+}
+/*form*/
+.contact-form {
+  form {
+    .contact-form__form__control {
+      margin-bottom: map-get($map: $margins, $key: m2);
+    }
+  }
+}

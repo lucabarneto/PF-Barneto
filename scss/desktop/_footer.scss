@@ -1,0 +1,70 @@
+/*Footer*/
+.footer {
+  background-color: map-get($map: $colors, $key: primary);
+  padding: $padding-section 0;
+  /* Grid 3x2 */
+  @include grid(
+    repeat(3, 33.33%),
+    repeat(2, auto),
+    "footer__social-media footer__navigation-links footer__company-links"
+      "footer__copyright footer__copyright footer__copyright",
+    center,
+    stretch
+  );
+  grid-area: footer;
+  .footer__social-media {
+    @include flex(column nowrap, center, stretch);
+    grid-area: footer__social-media;
+    .footer__social-media__address,
+    .footer__social-media__logo {
+      text-align: $text-center;
+    }
+    .footer__social-media__media {
+      @include margins(2rem, 0, 2rem, 0);
+      a {
+        .bi-footer {
+          font-size: map-get($map: $font-sizes, $key: t175);
+          @include paddings(0, 1rem, 0, 1rem);
+          &:hover {
+            color: map-get($map: $colors, $key: accent);
+          }
+        }
+      }
+    }
+  }
+  .footer__navigation-links {
+    grid-area: footer__navigation-links;
+    ul {
+      padding-left: map-get($map: $paddings, $key: p0);
+      li {
+        .footer__navigation-links__link {
+          &:hover {
+            color: map-get($map: $colors, $key: accent);
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .footer__company-links {
+    grid-area: footer__company-links;
+    ul {
+      padding-left: map-get($map: $paddings, $key: p0);
+    }
+  }
+  .footer__copyright {
+    text-align: $text-center;
+    grid-area: footer__copyright;
+    justify-self: stretch;
+    .footer__copyright__separator {
+      @include size(100%, 0.25rem);
+      background-color: map-get($map: $colors, $key: fff);
+      margin-bottom: map-get($map: $margins, $key: m1);
+    }
+  }
+  .footer__company-links,
+  .footer__navigation-links,
+  .footer__social-media {
+    margin-bottom: map-get($map: $margins, $key: m2);
+  }
+}

@@ -1,0 +1,39 @@
+/*Nav*/
+.website-navigation {
+  padding: $padding-header;
+  background-color: map-get($map: $colors, $key: primary);
+  @extend %sticky;
+  @include flex(row nowrap, space-between, center);
+  grid-area: website-navigation;
+  .website-navigation__logo {
+    @include size(auto, 4rem);
+    padding: $padding-nav;
+    font-size: map-get($map: $font-sizes, $key: t1);
+  }
+  nav {
+    ul {
+      padding-left: map-get($map: $paddings, $key: p0);
+      margin: map-get($map: $margins, $key: m0);
+      @include flex(row nowrap, space-between, center);
+      li {
+        @include size(auto, 4rem);
+        padding: $padding-nav;
+        font-size: map-get($map: $font-sizes, $key: t1);
+        font-family: $font-heading;
+        .website-navigation__link {
+          &:hover {
+            color: map-get($map: $colors, $key: accent);
+            text-decoration: underline;
+          }
+        }
+      }
+      /*este boton esta puesto en la nav por temas de especificidad*/
+      .button--collapsed {
+        @extend %button-special;
+      }
+    }
+  }
+}
+.website-navigation-mobile {
+  display: none;
+}

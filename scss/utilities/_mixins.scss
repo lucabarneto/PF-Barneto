@@ -1,0 +1,38 @@
+// flex y grid
+@mixin flex($flow, $justify, $align) {
+  display: flex;
+  flex-flow: $flow;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin grid($columns, $rows, $areas, $justify, $align) {
+  display: grid;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+  grid-template-areas: $areas;
+  justify-items: $justify;
+  align-items: $align;
+}
+// tamaños
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+// margins y paddings de más de un valor
+@mixin margins($mtop, $mright, $mbottom, $mleft) {
+  margin-top: $mtop;
+  margin-right: $mright;
+  margin-bottom: $mbottom;
+  margin-left: $mleft;
+}
+@mixin paddings($ptop, $pright, $pbottom, $pleft) {
+  padding-top: $ptop;
+  padding-right: $pright;
+  padding-bottom: $pbottom;
+  padding-left: $pleft;
+}
+// Position sticky de la nav, lo agrego en un mixin porque desde un extend solo no se puede agregar en le media querie mobile
+@mixin sticky {
+  position: sticky;
+  top: 0;
+}

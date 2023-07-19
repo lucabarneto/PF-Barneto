@@ -1,0 +1,35 @@
+$colors: (
+  primary: #131212,
+  secondary: #333333,
+  accent: #ffe600,
+  fff: white,
+);
+// hacer para margins, paddings, font-sizes, etc
+$margins: (
+  m9: 9rem,
+  m4: 4rem,
+  m2: 2rem,
+  m15: 1.5rem,
+  m1: 1rem,
+  m05: 0.5rem,
+  m025: 0.25rem,
+  m0: 0,
+  mauto: auto,
+);
+
+$paddings: (
+  p05: 0.5rem,
+  p0: 0,
+);
+
+$font-sizes: (
+  t3125: 3.125rem,
+  t2375: 2.375rem,
+  t2: 2rem,
+  t175: 1.75rem,
+  t15: 1.5rem,
+  t13125: 1.3125rem,
+  t125: 1.25rem,
+  t1: 1rem,
+  t075: 0.75rem,
+);

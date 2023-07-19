@@ -1,0 +1,52 @@
+/*Login*/
+.login {
+  /*Layout del login*/
+  /*Grid 2x2*/
+  @include grid(
+    repeat(2, 50%),
+    repeat(2, auto),
+    "login__header login__aside" "login__section login__aside",
+    stretch,
+    stretch
+  );
+  /*Header*/
+  .login__header {
+    padding: $padding-header;
+    text-align: $text-center;
+    grid-area: login__header;
+    align-self: end;
+  }
+  /*Form*/
+  .login__section {
+    @include paddings(0, 7.5rem, 9rem, 7.5rem);
+    grid-area: login__section;
+    .login__section__form {
+      @include flex(column nowrap, flex-start, stretch);
+      p {
+        margin-bottom: map-get($map: $margins, $key: m2);
+      }
+      .create-account,
+      .control-submit-login {
+        margin-bottom: map-get($map: $margins, $key: m2);
+        align-self: center;
+      }
+      .create-account {
+        a {
+          font-family: $font-heading;
+          font-weight: 700;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  /*Aside*/
+  .login__aside {
+    max-width: 100%;
+    grid-area: login__aside;
+    img {
+      @include size(100%, 100vh);
+    }
+  }
+}

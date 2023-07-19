@@ -1,0 +1,137 @@
+/*User*/
+/*Header*/
+.header-user {
+  padding: $padding-header;
+}
+/*Download section*/
+.download {
+  padding: $padding-section;
+  /*Grid 3x4*/
+  @include grid(
+    repeat(3, 33.33%),
+    repeat(4, auto),
+    "download__heading download__heading download__image"
+      "download__benefit__qr download__benefit__qr download__image"
+      "download__benefit__info download__benefit__info download__image"
+      "button__download__google button__download__apple download__image",
+    stretch,
+    stretch
+  );
+  .download__heading {
+    grid-area: download__heading;
+  }
+  .download__image {
+    grid-area: download__image;
+  }
+  .download__benefit__qr {
+    grid-area: download__benefit__qr;
+  }
+  .download__benefit__info {
+    grid-area: download__benefit__info;
+  }
+  .button__download__google {
+    grid-area: button__download__google;
+    align-self: center;
+    justify-self: center;
+  }
+  .button__download__apple {
+    grid-area: button__download__apple;
+    align-self: center;
+    justify-self: center;
+  }
+  .download__benefit {
+    @include flex(row nowrap, flex-start, center);
+    img {
+      max-width: 4.5rem;
+      max-height: 4.5rem;
+    }
+    div {
+      padding-left: 2.5rem;
+    }
+    h4 {
+      margin-top: map-get($map: $margins, $key: m0);
+      margin-bottom: map-get($map: $margins, $key: m1);
+    }
+  }
+}
+/*Schedule Section*/
+.schedule {
+  padding: $padding-section;
+  /*Grid 4x2*/
+  @include grid(
+    repeat(4, 1fr),
+    repeat(2, auto),
+    "schedule__gym-classes__boxing schedule__gym-classes__crossfit schedule__gym-classes__yoga schedule__gym-classes__online"
+      "schedule__table schedule__table schedule__table schedule__table",
+    center,
+    stretch
+  );
+  text-align: $text-center;
+  .schedule__gym-class {
+    margin-bottom: map-get($map: $margins, $key: m4);
+    @include paddings(1rem, 2.5rem, 1rem, 2.5rem);
+    border: thin solid map-get($map: $colors, $key: fff);
+    border-radius: 0.5rem;
+    img {
+      @include size(4rem, 4rem);
+    }
+    div {
+      font-family: $font-heading;
+      font-weight: 700;
+      margin-top: map-get($map: $margins, $key: m1);
+    }
+  }
+  .schedule__gym-classes__boxing {
+    grid-area: schedule__gym-classes__boxing;
+    border-top: thick solid red;
+  }
+  .schedule__gym-classes__crossfit {
+    grid-area: schedule__gym-classes__crossfit;
+    border-top: thick solid orange;
+  }
+  .schedule__gym-classes__yoga {
+    grid-area: schedule__gym-classes__yoga;
+    border-top: thick solid green;
+  }
+  .schedule__gym-classes__online {
+    grid-area: schedule__gym-classes__online;
+    border-top: thick solid violet;
+  }
+  .schedule__table {
+    grid-area: schedule__table;
+    width: 100%;
+    margin: map-get($map: $margins, $key: m0);
+    text-align: $text-center;
+    caption {
+      display: none;
+    }
+    thead {
+      th {
+        background-color: map-get($map: $colors, $key: secondary);
+        @extend %table;
+        border: thin solid map-get($map: $colors, $key: fff);
+      }
+    }
+    tbody {
+      tr {
+        th,
+        td {
+          @extend %table;
+          border: thin solid map-get($map: $colors, $key: fff);
+        }
+        .schedule__table__cell-crossfit {
+          border-top: medium solid orange;
+        }
+        .schedule__table__cell-yoga {
+          border-top: medium solid green;
+        }
+        .schedule__table__cell-boxing {
+          border-top: medium solid red;
+        }
+        .schedule__table__cell-online {
+          border-top: medium solid violet;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/*forms*/
+.form-control {
+  background: transparent;
+  border: thin solid map-get($map: $colors, $key: fff);
+  color: map-get($map: $colors, $key: fff);
+  &:hover {
+    border-color: map-get($map: $colors, $key: accent);
+  }
+  &:focus {
+    background-color: map-get($map: $colors, $key: secondary);
+    color: map-get($map: $colors, $key: fff);
+  }
+  &::placeholder {
+    color: map-get($map: $colors, $key: fff);
+  }
+}
