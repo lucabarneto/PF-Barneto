@@ -1,108 +1,121 @@
 /*Location*/
-/*Header*/
-.header-location {
-  padding: $padding-header;
-  text-align: $text-center;
-}
-/*Features Section*/
-.features {
-  text-align: $text-center;
-  padding: $padding-section;
-  /*Carrusel de imágenes*/
-  .carousel-slide {
-    margin-bottom: map-get($map: $margins, $key: m4);
-    .carousel-inner {
-      .carousel-item {
-        img {
-          @include margins(0, auto, 0, auto);
+.location__body {
+  /*Layout de location*/
+  @include grid(
+    100vw,
+    repeat(5, auto),
+    "website-navigation" "header-location" "features" "information" "footer",
+    stretch,
+    stretch
+  );
+  .header-location {
+    /*Header*/
+    padding: $padding-header;
+    text-align: $text-center;
+    grid-area: header-location;
+  }
+  .features {
+    /*Features Section*/
+    text-align: $text-center;
+    padding: $padding-section;
+    grid-area: features;
+    .carousel-slide {
+      /*Carrusel de imágenes*/
+      margin-bottom: map-get($map: $margins, $key: m4);
+      .carousel-inner {
+        .carousel-item {
+          img {
+            @include margins(0, auto, 0, auto);
+          }
         }
       }
-    }
-    .carousel-control-prev,
-    .carousel-control-next {
-      opacity: 1;
-      .carousel-icon-container {
-        background-color: map-get($map: $colors, $key: secondary);
-        padding: map-get($map: $paddings, $key: p05);
-        border-radius: 100px;
-        .bi-chevron-left,
-        .bi-chevron-right {
-          font-size: map-get($map: $font-sizes, $key: t2);
-          color: map-get($map: $colors, $key: fff);
-          &:hover {
-            color: map-get($map: $colors, $key: accent);
+      .carousel-control-prev,
+      .carousel-control-next {
+        opacity: 1;
+        .carousel-icon-container {
+          background-color: map-get($map: $colors, $key: secondary);
+          padding: map-get($map: $paddings, $key: p05);
+          border-radius: 100px;
+          .bi-chevron-left,
+          .bi-chevron-right {
+            font-size: map-get($map: $font-sizes, $key: t2);
+            color: map-get($map: $colors, $key: fff);
+            &:hover {
+              color: map-get($map: $colors, $key: accent);
+            }
           }
         }
       }
     }
-  }
-  /*Features*/
-  .features__gym-features {
-    @include margins(0, 12.75rem, 0, 12.75rem);
-    /*Grid 4x2*/
-    @include grid(
-      repeat(4, 25%),
-      repeat(2, auto),
-      "features__gym-features__lockers features__gym-features__showers features__gym-features__glove features__gym-features__dumbbell"
-        "features__gym-features__time features__gym-features__staff features__gym-features__gymnastics features__gym-features__air-conditioner",
-      center,
-      stretch
-    );
-    .features__gym-features__listitem {
-      @include size(11.25rem, 15.5rem);
-      @include paddings(3rem, 2rem, 3rem, 2rem);
-      margin-top: map-get($map: $margins, $key: m2);
-      background-color: map-get($map: $colors, $key: primary);
-      border: 0.0625rem solid map-get($map: $colors, $key: fff);
-      text-align: $text-center;
-      p {
-        margin-top: map-get($map: $margins, $key: m05);
-        font-family: $font-heading;
-        color: map-get($map: $colors, $key: fff);
+    .features__gym-features {
+      /*Features*/
+      @include margins(0, 12.75rem, 0, 12.75rem);
+      /*Grid 4x2*/
+      @include grid(
+        repeat(4, 25%),
+        repeat(2, auto),
+        "features__gym-features__lockers features__gym-features__showers features__gym-features__glove features__gym-features__dumbbell"
+          "features__gym-features__time features__gym-features__staff features__gym-features__gymnastics features__gym-features__air-conditioner",
+        center,
+        stretch
+      );
+      .features__gym-features__listitem {
+        @include size(11.25rem, 15.5rem);
+        @include paddings(3rem, 2rem, 3rem, 2rem);
+        margin-top: map-get($map: $margins, $key: m2);
+        background-color: map-get($map: $colors, $key: primary);
+        border: 0.0625rem solid map-get($map: $colors, $key: fff);
+        text-align: $text-center;
+        p {
+          margin-top: map-get($map: $margins, $key: m05);
+          font-family: $font-heading;
+          color: map-get($map: $colors, $key: fff);
+        }
+      }
+      .features__gym-features__lockers {
+        grid-area: features__gym-features__lockers;
+      }
+      .features__gym-features__showers {
+        grid-area: features__gym-features__showers;
+      }
+      .features__gym-features__glove {
+        grid-area: features__gym-features__glove;
+      }
+      .features__gym-features__dumbbell {
+        grid-area: features__gym-features__dumbbell;
+        p {
+          margin-top: map-get($map: $margins, $key: m0);
+        }
+      }
+      .features__gym-features__time {
+        grid-area: features__gym-features__time;
+      }
+      .features__gym-features__staff {
+        grid-area: features__gym-features__staff;
+      }
+      .features__gym-features__gymnastics {
+        grid-area: features__gym-features__gymnastics;
+      }
+      .features__gym-features__air-conditioner {
+        grid-area: features__gym-features__air-conditioner;
       }
     }
-    .features__gym-features__lockers {
-      grid-area: features__gym-features__lockers;
-    }
-    .features__gym-features__showers {
-      grid-area: features__gym-features__showers;
-    }
-    .features__gym-features__glove {
-      grid-area: features__gym-features__glove;
-    }
-    .features__gym-features__dumbbell {
-      grid-area: features__gym-features__dumbbell;
-      p {
-        margin-top: map-get($map: $margins, $key: m0);
-      }
-    }
-    .features__gym-features__time {
-      grid-area: features__gym-features__time;
-    }
-    .features__gym-features__staff {
-      grid-area: features__gym-features__staff;
-    }
-    .features__gym-features__gymnastics {
-      grid-area: features__gym-features__gymnastics;
-    }
-    .features__gym-features__air-conditioner {
-      grid-area: features__gym-features__air-conditioner;
-    }
   }
-}
-/*Information Section*/
-.information {
-  background-color: map-get($map: $colors, $key: secondary);
-  padding: $padding-section;
-  @include flex(row wrap, space-between, flex-start);
-  .information__contact-information {
-    h3 {
-      margin-bottom: map-get($map: $margins, $key: m2);
-    }
-    ul {
-      padding: map-get($map: $paddings, $key: p0);
-      li {
-        margin-bottom: map-get($map: $margins, $key: m1);
+  .information {
+    /*Information Section*/
+    background-color: map-get($map: $colors, $key: secondary);
+    padding: $padding-section;
+    @include flex(row wrap, space-between, flex-start);
+    grid-area: information;
+    .information__contact-information {
+      h3 {
+        margin-bottom: map-get($map: $margins, $key: m2);
+      }
+      ul {
+        padding: map-get($map: $paddings, $key: p0);
+        li {
+          margin-bottom: map-get($map: $margins, $key: m1);
+        }
       }
     }
   }

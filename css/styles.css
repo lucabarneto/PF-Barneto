@@ -19,6 +19,7 @@
   font-family: Archivo, sans-serif;
   font-weight: 700;
   border-radius: 0.5rem;
+  border: none;
   text-decoration: none;
 }
 .button__download__google:hover,
@@ -48,8 +49,8 @@
   margin-bottom: 2rem;
 }
 
-.schedule .schedule__table tbody tr th,
-.schedule .schedule__table tbody tr td, .schedule .schedule__table thead th {
+.user__body .schedule .schedule__table tbody tr th,
+.user__body .schedule .schedule__table tbody tr td, .user__body .schedule .schedule__table thead th {
   width: 12.5%;
   height: 3rem;
 }
@@ -163,9 +164,9 @@ h4 {
   grid-template-areas: "website-navigation" "header-home" "activities" "online-classes" "plans" "footer";
   justify-items: stretch;
   align-items: stretch;
-  /*Header*/
 }
 .index__body .header-home {
+  /*Header*/
   width: auto;
   height: 80vh;
   background-image: url(../img/home-hero-image.jpg);
@@ -347,20 +348,31 @@ h4 {
 }
 
 /*About us*/
-/*Header*/
-.header-about-us {
+.about-us__body {
+  /*Layout de about-us*/
+  /*Grid 1x4*/
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "website-navigation" "header-about-us" "staff" "footer";
+  justify-items: stretch;
+  align-items: stretch;
+}
+.about-us__body .header-about-us {
+  /*Header*/
   width: 100%;
   height: 37.5rem;
   padding: 9rem 7.5rem;
   background-image: url(../img/about-us--header-background.jpg);
+  background-repeat: no-repeat;
   text-align: center;
+  grid-area: header-about-us;
 }
-.header-about-us p {
+.about-us__body .header-about-us p {
   font-size: 1.3125rem;
 }
-
-/*Staff Section*/
-.staff {
+.about-us__body .staff {
+  /*Staff Section*/
   background-color: #333333;
   padding: 9rem 7.5rem;
   text-align: center;
@@ -368,66 +380,77 @@ h4 {
   display: grid;
   grid-template-columns: repeat(4, 25%);
   grid-template-rows: repeat(3, auto);
+  grid-area: staff;
 }
-.staff h2 {
+.about-us__body .staff h2 {
   grid-column: 1/5;
   margin-bottom: 4rem;
 }
-.staff .staff__member {
+.about-us__body .staff .staff__member {
   margin-bottom: 2rem;
 }
-.staff .staff__member p {
+.about-us__body .staff .staff__member p {
   margin-top: 1rem;
   margin-bottom: 0;
 }
 
 /*Location*/
-/*Header*/
-.header-location {
+.location__body {
+  /*Layout de location*/
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas: "website-navigation" "header-location" "features" "information" "footer";
+  justify-items: stretch;
+  align-items: stretch;
+}
+.location__body .header-location {
+  /*Header*/
   padding: 0 7.5rem;
   text-align: center;
+  grid-area: header-location;
 }
-
-/*Features Section*/
-.features {
+.location__body .features {
+  /*Features Section*/
   text-align: center;
   padding: 9rem 7.5rem;
-  /*Carrusel de imágenes*/
-  /*Features*/
+  grid-area: features;
 }
-.features .carousel-slide {
+.location__body .features .carousel-slide {
+  /*Carrusel de imágenes*/
   margin-bottom: 4rem;
 }
-.features .carousel-slide .carousel-inner .carousel-item img {
+.location__body .features .carousel-slide .carousel-inner .carousel-item img {
   margin-top: 0;
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
 }
-.features .carousel-slide .carousel-control-prev,
-.features .carousel-slide .carousel-control-next {
+.location__body .features .carousel-slide .carousel-control-prev,
+.location__body .features .carousel-slide .carousel-control-next {
   opacity: 1;
 }
-.features .carousel-slide .carousel-control-prev .carousel-icon-container,
-.features .carousel-slide .carousel-control-next .carousel-icon-container {
+.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container,
+.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container {
   background-color: #333333;
   padding: 0.5rem;
   border-radius: 100px;
 }
-.features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left,
-.features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right,
-.features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left,
-.features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right {
+.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left,
+.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right,
+.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left,
+.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right {
   font-size: 2rem;
   color: white;
 }
-.features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left:hover,
-.features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right:hover,
-.features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left:hover,
-.features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right:hover {
+.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left:hover,
+.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right:hover,
+.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left:hover,
+.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right:hover {
   color: #ffe600;
 }
-.features .features__gym-features {
+.location__body .features .features__gym-features {
+  /*Features*/
   margin-top: 0;
   margin-right: 12.75rem;
   margin-bottom: 0;
@@ -440,7 +463,7 @@ h4 {
   justify-items: center;
   align-items: stretch;
 }
-.features .features__gym-features .features__gym-features__listitem {
+.location__body .features .features__gym-features .features__gym-features__listitem {
   width: 11.25rem;
   height: 15.5rem;
   padding-top: 3rem;
@@ -452,67 +475,88 @@ h4 {
   border: 0.0625rem solid white;
   text-align: center;
 }
-.features .features__gym-features .features__gym-features__listitem p {
+.location__body .features .features__gym-features .features__gym-features__listitem p {
   margin-top: 0.5rem;
   font-family: Archivo, sans-serif;
   color: white;
 }
-.features .features__gym-features .features__gym-features__lockers {
+.location__body .features .features__gym-features .features__gym-features__lockers {
   grid-area: features__gym-features__lockers;
 }
-.features .features__gym-features .features__gym-features__showers {
+.location__body .features .features__gym-features .features__gym-features__showers {
   grid-area: features__gym-features__showers;
 }
-.features .features__gym-features .features__gym-features__glove {
+.location__body .features .features__gym-features .features__gym-features__glove {
   grid-area: features__gym-features__glove;
 }
-.features .features__gym-features .features__gym-features__dumbbell {
+.location__body .features .features__gym-features .features__gym-features__dumbbell {
   grid-area: features__gym-features__dumbbell;
 }
-.features .features__gym-features .features__gym-features__dumbbell p {
+.location__body .features .features__gym-features .features__gym-features__dumbbell p {
   margin-top: 0;
 }
-.features .features__gym-features .features__gym-features__time {
+.location__body .features .features__gym-features .features__gym-features__time {
   grid-area: features__gym-features__time;
 }
-.features .features__gym-features .features__gym-features__staff {
+.location__body .features .features__gym-features .features__gym-features__staff {
   grid-area: features__gym-features__staff;
 }
-.features .features__gym-features .features__gym-features__gymnastics {
+.location__body .features .features__gym-features .features__gym-features__gymnastics {
   grid-area: features__gym-features__gymnastics;
 }
-.features .features__gym-features .features__gym-features__air-conditioner {
+.location__body .features .features__gym-features .features__gym-features__air-conditioner {
   grid-area: features__gym-features__air-conditioner;
 }
-
-/*Information Section*/
-.information {
+.location__body .information {
+  /*Information Section*/
   background-color: #333333;
   padding: 9rem 7.5rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
+  grid-area: information;
 }
-.information .information__contact-information h3 {
+.location__body .information .information__contact-information h3 {
   margin-bottom: 2rem;
 }
-.information .information__contact-information ul {
+.location__body .information .information__contact-information ul {
   padding: 0;
 }
-.information .information__contact-information ul li {
+.location__body .information .information__contact-information ul li {
   margin-bottom: 1rem;
 }
 
 /*Contact*/
-/*Header*/
-.header-contact {
-  text-align: center;
+.contact__body {
+  /*Layout de contact*/
+  /*Grid 1x3*/
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "website-navigation" "header-contact" "contact-form" "footer";
+  justify-items: stretch;
+  align-items: stretch;
 }
-
-/*form*/
-.contact-form form .contact-form__form__control {
+.contact__body .header-contact {
+  /*Header*/
+  padding: 0 7.5rem;
+  text-align: center;
+  grid-area: header-contact;
+}
+.contact__body .contact-form {
+  /*Form*/
+  padding-top: 0;
+  padding-right: 7.5rem;
+  padding-bottom: 9rem;
+  padding-left: 7.5rem;
+  grid-area: contact-form;
+}
+.contact__body .contact-form form .contact-form__form__control {
   margin-bottom: 2rem;
+}
+.contact__body .contact-form form .control-submit-contact {
+  text-align: center;
 }
 
 /*Login*/
@@ -525,17 +569,16 @@ h4 {
   grid-template-areas: "login__header login__aside" "login__section login__aside";
   justify-items: stretch;
   align-items: stretch;
-  /*Header*/
-  /*Form*/
-  /*Aside*/
 }
 .login .login__header {
+  /*Header*/
   padding: 0 7.5rem;
   text-align: center;
   grid-area: login__header;
   align-self: end;
 }
 .login .login__section {
+  /*Form*/
   padding-top: 0;
   padding-right: 7.5rem;
   padding-bottom: 9rem;
@@ -564,6 +607,7 @@ h4 {
   text-decoration: underline;
 }
 .login .login__aside {
+  /*Aside*/
   max-width: 100%;
   grid-area: login__aside;
 }
@@ -573,14 +617,25 @@ h4 {
 }
 
 /*User*/
-/*Header*/
-.header-user {
-  padding: 0 7.5rem;
+.user__body {
+  /*Layout de user*/
+  /*Grid 1x5*/
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas: "website-navigation" "header-user" "download" "schedule" "footer";
+  justify-items: "stretch";
+  align-items: stretch;
 }
-
-/*Download section*/
-.download {
+.user__body .header-user {
+  /*Header*/
+  padding: 0 7.5rem;
+  grid-area: header-user;
+}
+.user__body .download {
+  /*Download section*/
   padding: 9rem 7.5rem;
+  grid-area: download;
   /*Grid 3x4*/
   display: grid;
   grid-template-columns: repeat(3, 33.33%);
@@ -589,49 +644,47 @@ h4 {
   justify-items: stretch;
   align-items: stretch;
 }
-.download .download__heading {
+.user__body .download .download__heading {
   grid-area: download__heading;
 }
-.download .download__image {
+.user__body .download .download__image {
   grid-area: download__image;
 }
-.download .download__benefit__qr {
+.user__body .download .download__benefit__qr {
   grid-area: download__benefit__qr;
 }
-.download .download__benefit__info {
+.user__body .download .download__benefit__info {
   grid-area: download__benefit__info;
 }
-.download .button__download__google {
+.user__body .download .button__download__google {
   grid-area: button__download__google;
   align-self: center;
-  justify-self: center;
 }
-.download .button__download__apple {
+.user__body .download .button__download__apple {
   grid-area: button__download__apple;
   align-self: center;
-  justify-self: center;
 }
-.download .download__benefit {
+.user__body .download .download__benefit {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
 }
-.download .download__benefit img {
+.user__body .download .download__benefit img {
   max-width: 4.5rem;
   max-height: 4.5rem;
 }
-.download .download__benefit div {
+.user__body .download .download__benefit div {
   padding-left: 2.5rem;
 }
-.download .download__benefit h4 {
+.user__body .download .download__benefit h4 {
   margin-top: 0;
   margin-bottom: 1rem;
 }
-
-/*Schedule Section*/
-.schedule {
+.user__body .schedule {
+  /*Schedule Section*/
   padding: 9rem 7.5rem;
+  grid-area: schedule;
   /*Grid 4x2*/
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -641,67 +694,76 @@ h4 {
   align-items: stretch;
   text-align: center;
 }
-.schedule .schedule__gym-class {
+.user__body .schedule .schedule__gym-class {
   margin-bottom: 4rem;
   padding-top: 1rem;
   padding-right: 2.5rem;
   padding-bottom: 1rem;
   padding-left: 2.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   border: thin solid white;
   border-radius: 0.5rem;
 }
-.schedule .schedule__gym-class img {
-  width: 4rem;
-  height: 4rem;
-}
-.schedule .schedule__gym-class div {
+.user__body .schedule .schedule__gym-class .schedule__gym-class__image {
   font-family: Archivo, sans-serif;
   font-weight: 700;
   margin-top: 1rem;
 }
-.schedule .schedule__gym-classes__boxing {
+.user__body .schedule .schedule__gym-class .schedule__gym-class__image img {
+  width: 4rem;
+  height: 4rem;
+}
+.user__body .schedule .schedule__gym-class .schedule__gym-class__time {
+  display: none;
+}
+.user__body .schedule .schedule__gym-classes__boxing {
   grid-area: schedule__gym-classes__boxing;
   border-top: thick solid red;
 }
-.schedule .schedule__gym-classes__crossfit {
+.user__body .schedule .schedule__gym-classes__crossfit {
   grid-area: schedule__gym-classes__crossfit;
   border-top: thick solid orange;
 }
-.schedule .schedule__gym-classes__yoga {
+.user__body .schedule .schedule__gym-classes__yoga {
   grid-area: schedule__gym-classes__yoga;
   border-top: thick solid green;
 }
-.schedule .schedule__gym-classes__online {
+.user__body .schedule .schedule__gym-classes__online {
   grid-area: schedule__gym-classes__online;
   border-top: thick solid violet;
 }
-.schedule .schedule__table {
+.user__body .schedule .schedule__table {
+  /*Tabla*/
   grid-area: schedule__table;
   width: 100%;
   margin: 0;
   text-align: center;
+  margin-bottom: 4rem;
 }
-.schedule .schedule__table caption {
+.user__body .schedule .schedule__table caption {
   display: none;
 }
-.schedule .schedule__table thead th {
+.user__body .schedule .schedule__table thead th {
   background-color: #333333;
   border: thin solid white;
 }
-.schedule .schedule__table tbody tr th,
-.schedule .schedule__table tbody tr td {
+.user__body .schedule .schedule__table tbody tr th,
+.user__body .schedule .schedule__table tbody tr td {
   border: thin solid white;
 }
-.schedule .schedule__table tbody tr .schedule__table__cell-crossfit {
+.user__body .schedule .schedule__table tbody tr .schedule__table__cell-crossfit {
   border-top: medium solid orange;
 }
-.schedule .schedule__table tbody tr .schedule__table__cell-yoga {
+.user__body .schedule .schedule__table tbody tr .schedule__table__cell-yoga {
   border-top: medium solid green;
 }
-.schedule .schedule__table tbody tr .schedule__table__cell-boxing {
+.user__body .schedule .schedule__table tbody tr .schedule__table__cell-boxing {
   border-top: medium solid red;
 }
-.schedule .schedule__table tbody tr .schedule__table__cell-online {
+.user__body .schedule .schedule__table tbody tr .schedule__table__cell-online {
   border-top: medium solid violet;
 }
 
@@ -868,9 +930,22 @@ h4 {
   .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid .navbar-toggler:focus .bi-list {
     color: #ffe600;
   }
+  .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid .navbar-collapse .navbar-nav {
+    align-items: center;
+  }
+  .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid .navbar-collapse .navbar-nav .nav-item {
+    width: auto;
+    height: 3rem;
+  }
+  .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link {
+    font-family: Archivo, sans-serif;
+  }
+  .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .button--collapsed {
+    color: #131212;
+  }
   /*Index*/
-  /* Header */
-  .header-home {
+  .index__body .header-home {
+    /* Header */
     width: auto;
     height: 80vh;
     background-image: url(../img/home-hero-image-mobile.jpg);
@@ -878,20 +953,20 @@ h4 {
     background-size: cover;
     align-items: center;
   }
-  .header-home h1,
-  .header-home p,
-  .header-home div {
+  .index__body .header-home h1,
+  .index__body .header-home p,
+  .index__body .header-home div {
     margin-left: 1rem;
     margin-bottom: 1rem;
     margin-left: 0;
     max-width: calc(100vw - 32px);
     text-align: center;
   }
-  .header-home p {
+  .index__body .header-home p {
     font-size: 1rem;
   }
-  /* Activities section */
-  .activities {
+  .index__body main .activities {
+    /* Activities section */
     padding: 5rem 1rem;
     /*Grid 1x6*/
     display: grid;
@@ -901,47 +976,47 @@ h4 {
     justify-items: center;
     align-items: stretch;
   }
-  .activities .activities__gym-card {
+  .index__body main .activities .activities__gym-card {
     width: calc(100vw - 32px);
     height: auto;
     max-width: auto;
   }
-  .activities .activities__gym-card img {
+  .index__body main .activities .activities__gym-card img {
     width: 100%;
     height: auto;
   }
-  .activities .activities__cross,
-  .activities .activities__yoga {
+  .index__body main .activities .activities__cross,
+  .index__body main .activities .activities__yoga {
     margin-top: 0;
   }
-  .activities .activities__heading,
-  .activities .activities__gym-card {
+  .index__body main .activities .activities__heading,
+  .index__body main .activities .activities__gym-card {
     margin-bottom: 1.5rem;
   }
-  /* Online-classes section */
-  .online-classes {
+  .index__body main .online-classes {
+    /* Online-classes section */
     height: 29.75rem;
     height: auto;
     padding: 0;
     flex-flow: column nowrap;
     text-align: center;
   }
-  .online-classes h2 {
+  .index__body main .online-classes h2 {
     margin-bottom: 1rem;
   }
-  .online-classes .online-classes-mobile__content {
+  .index__body main .online-classes .online-classes-mobile__content {
     padding: 5rem 1rem 2rem;
   }
-  .online-classes .online-classes-mobile__content .online-classes-mobile__content__text--12 {
+  .index__body main .online-classes .online-classes-mobile__content .online-classes-mobile__content__text--12 {
     display: block;
     font-size: 0.75rem;
   }
-  .online-classes .online-classes__image img {
+  .index__body main .online-classes .online-classes__image img {
     width: 100%;
     height: auto;
   }
-  /* Plans section */
-  .plans {
+  .index__body main .plans {
+    /* Plans section */
     padding: 5rem 1rem;
     /*Grid 1x4*/
     display: grid;
@@ -951,41 +1026,41 @@ h4 {
     justify-items: center;
     align-items: center;
   }
-  .plans .plans__button-toggle-container {
+  .index__body main .plans .plans__button-toggle-container {
     width: 10.75rem;
     height: 2.25rem;
   }
-  .plans .plans__heading {
+  .index__body main .plans .plans__heading {
     margin-bottom: 2rem;
   }
-  .plans .plans__gym-plan {
+  .index__body main .plans .plans__gym-plan {
     width: calc(100vw - 32px);
     height: 35rem;
     max-width: 22.5rem;
     margin-top: 2rem;
   }
-  .plans .plans__gym-plan .plans__gym-plan__separator {
+  .index__body main .plans .plans__gym-plan .plans__gym-plan__separator {
     width: calc(100% - 32px);
     height: auto;
     margin-top: 0.25rem;
   }
-  .plans .plans__gym-plan .plans__gym-plan__name {
+  .index__body main .plans .plans__gym-plan .plans__gym-plan__name {
     font-size: 1.75rem;
   }
-  .plans .plans__gym-plan .plans__gym-plan__relevant-info {
+  .index__body main .plans .plans__gym-plan .plans__gym-plan__relevant-info {
     font-size: 1rem;
     margin-top: 2rem;
   }
   /*Location*/
-  /*Header*/
-  .header-location {
+  .location__body .header-location {
+    /*Header*/
     padding: 0 1rem;
   }
-  /* Features section */
-  .features {
+  .location__body .features {
+    /* Features section */
     padding: 5rem 1rem;
   }
-  .features .features__gym-features {
+  .location__body .features .features__gym-features {
     width: calc(100vw - 32px);
     height: auto;
     margin-top: 2.5rem;
@@ -1001,7 +1076,7 @@ h4 {
     align-items: stretch;
     row-gap: 1rem;
   }
-  .features .features__gym-features .features__gym-features__listitem {
+  .location__body .features .features__gym-features .features__gym-features__listitem {
     width: calc(100% - 16px);
     height: 10.625rem;
     padding-top: 1rem;
@@ -1013,23 +1088,159 @@ h4 {
     border: 0.0625rem solid white;
     text-align: center;
   }
-  .features .features__gym-features div:nth-child(even) {
+  .location__body .features .features__gym-features div:nth-child(even) {
     justify-self: end;
   }
-  /* Information section */
-  .information {
+  .location__body .information {
+    /* Information section */
     padding: 5rem 1rem;
     flex-flow: column nowrap;
   }
-  .information .information__contact-information h3 {
+  .location__body .information .information__contact-information h3 {
     margin-bottom: 2rem;
   }
-  .information .information__contact-information ul {
+  .location__body .information .information__contact-information ul {
     margin-bottom: 2rem;
   }
-  .information iframe {
+  .location__body .information iframe {
     width: 100%;
     height: auto;
+  }
+  /*About Us*/
+  .about-us__body .header-about-us {
+    /*Header*/
+    width: 100%;
+    height: 90vh;
+    padding: 5rem 1rem;
+    background-size: cover;
+  }
+  .about-us__body .staff {
+    /*Staff Section*/
+    padding: 5rem 1rem;
+    width: 100vw;
+    height: auto;
+    /*Grid 2x5*/
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(5, auto);
+  }
+  .about-us__body .staff h2 {
+    grid-column: 1/3;
+  }
+  .about-us__body .staff .staff__member img {
+    width: calc(100% - 16px);
+    height: auto;
+  }
+  /*Contact*/
+  .contact__body .header-contact {
+    /*Header*/
+    padding: 0 1rem;
+  }
+  .contact__body .contact-form {
+    /*Form*/
+    padding-top: 0;
+    padding-right: 1rem;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+  }
+  /*Login*/
+  .login {
+    /*Layout mobile*/
+    /*Grid 1x2*/
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-areas: "login__header" "login__section";
+    justify-items: stretch;
+    align-items: stretch;
+  }
+  .login .login__header {
+    padding: 0 1rem;
+  }
+  .login .login__section {
+    padding-top: 0;
+    padding-right: 1rem;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+  }
+  .login .login__aside {
+    /*Aside*/
+    display: none;
+  }
+  /*User*/
+  .user__body .header-user {
+    /*Header*/
+    padding: 0 1rem;
+  }
+  .user__body .download {
+    /*Download section*/
+    width: 100vw;
+    height: auto;
+    padding: 5rem 1rem;
+    background-image: url(../img/user-download-background-mobile.png);
+    background-repeat: no-repeat;
+    background-position: 48.5%;
+    /*Grid 2x4*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "download__heading download__heading" "download__benefit__qr download__benefit__qr" "download__benefit__info download__benefit__info" "button__download__google button__download__apple";
+    justify-items: stretch;
+    align-items: center;
+  }
+  .user__body .download .download__heading,
+  .user__body .download .download__benefit__qr,
+  .user__body .download .download__benefit__info {
+    width: calc(100vw - 32px);
+    height: auto;
+  }
+  .user__body .download .download__heading {
+    margin-bottom: 2rem;
+  }
+  .user__body .download .download__benefit__info div,
+  .user__body .download .download__benefit__qr div {
+    padding-left: 2rem;
+  }
+  .user__body .download .download__image {
+    display: none;
+  }
+  .user__body .schedule {
+    /*Schedule section*/
+    padding: 5rem 1rem;
+    /*Grid 2x3*/
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "schedule__gym-classes__boxing" "schedule__gym-classes__crossfit" "schedule__gym-classes__yoga" "schedule__gym-classes__online";
+    justify-items: center;
+    align-items: stretch;
+  }
+  .user__body .schedule .schedule__gym-class {
+    width: calc(100vw - 32px);
+    height: 14.875rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
+  .user__body .schedule .schedule__gym-class .schedule__gym-class__image {
+    margin: 0;
+    padding-right: 1rem;
+  }
+  .user__body .schedule .schedule__gym-class .schedule__gym-class__time {
+    display: block;
+  }
+  .user__body .schedule .schedule__gym-class .schedule__gym-class__time ul {
+    text-align: left;
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    padding: 0;
+  }
+  .user__body .schedule .schedule__gym-class .schedule__gym-class__time ul li {
+    padding-bottom: 0.5rem;
+  }
+  .user__body .schedule .schedule__table {
+    display: none;
   }
   /* Footer */
   .footer {
@@ -1073,12 +1284,24 @@ h4 {
     padding-left: 1.5rem;
   }
   .button--toggle {
-    width: auto;
+    width: 50%;
     height: 2.25rem;
     padding-top: 0.5rem;
     padding-right: 0;
     padding-bottom: 0.5rem;
     padding-left: 0;
+  }
+  .button__download__google,
+  .button__download__apple {
+    width: 10rem;
+    height: 4rem;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    justify-self: center;
+    margin-top: 1rem;
   }
 }
 

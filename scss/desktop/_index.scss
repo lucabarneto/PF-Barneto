@@ -10,8 +10,8 @@
     stretch,
     stretch
   );
-  /*Header*/
   .header-home {
+    /*Header*/
     @include size(auto, 80vh);
     background-image: url(../img/home-hero-image.jpg);
     background-repeat: no-repeat;

@@ -1,13 +1,31 @@
 /*Contact*/
-/*Header*/
-.header-contact {
-  text-align: $text-center;
-}
-/*form*/
-.contact-form {
-  form {
-    .contact-form__form__control {
-      margin-bottom: map-get($map: $margins, $key: m2);
+.contact__body {
+  /*Layout de contact*/
+  /*Grid 1x3*/
+  @include grid(
+    100vw,
+    repeat(4, auto),
+    "website-navigation" "header-contact" "contact-form" "footer",
+    stretch,
+    stretch
+  );
+  .header-contact {
+    /*Header*/
+    padding: $padding-header;
+    text-align: $text-center;
+    grid-area: header-contact;
+  }
+  .contact-form {
+    /*Form*/
+    @include paddings(0, 7.5rem, 9rem, 7.5rem);
+    grid-area: contact-form;
+    form {
+      .contact-form__form__control {
+        margin-bottom: map-get($map: $margins, $key: m2);
+      }
+      .control-submit-contact {
+        text-align: $text-center;
+      }
     }
   }
 }

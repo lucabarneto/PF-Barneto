@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body>
+  <body class="contact__body">
     <!-- Nav Desktop -->
     <div class="website-navigation">
       <div class="website-navigation__logo">
@@ -75,13 +75,69 @@
         </ul>
       </nav>
     </div>
+    <!-- Nav mobile -->
+    <div class="website-navigation-mobile">
+      <nav class="navbar navbar-expand-lg website-navigation-mobile__navbar">
+        <div class="container-fluid">
+          <a href="../index.html"><img src="" alt="Company's logo" /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link website-navigation__link"
+                  href="./about-us.html"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link website-navigation__link" href="./login.html"
+                  >Login</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link website-navigation__link"
+                  href="./contact.html"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link website-navigation__link"
+                  href="./location.html"
+                  >Location</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link button button--collapsed button--text-black"
+                  href="../index.html#plans"
+                  >View plans now</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
     <!-- Header -->
     <header class="header-contact">
       <h1 class="heading">CONTACT US ANYTIME</h1>
     </header>
     <main>
       <!-- Form de contacto -->
-      <section id="contact-form" class="contact-form padding-section">
+      <section id="contact-form" class="contact-form">
         <!-- Todos los inputs menos el submit están hechos con bootstrap -->
         <form
           action="../index.html"

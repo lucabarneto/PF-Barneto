@@ -16,7 +16,7 @@
   }
   /* Nav */
   .website-navigation {
-    display: none;
+    display: $dnone;
   }
   .website-navigation-mobile {
     display: block;
@@ -41,168 +41,326 @@
             }
           }
         }
-      }
-    }
-  }
-  /*Index*/
-  /* Header */
-  .header-home {
-    @include size(auto, 80vh);
-    background-image: url(../img/home-hero-image-mobile.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-items: center;
-    h1,
-    p,
-    div {
-      margin-left: map-get($map: $margins, $key: m1);
-      margin-bottom: map-get($map: $margins, $key: m1);
-      margin-left: map-get($map: $margins, $key: m0);
-      max-width: calc(100vw - 32px);
-      text-align: $text-center;
-    }
-    p {
-      font-size: map-get($map: $font-sizes, $key: t1);
-    }
-  }
-  /* Activities section */
-  .activities {
-    padding: $padding-mobile-section;
-    /*Grid 1x6*/
-    @include grid(
-      1fr,
-      repeat(6, auto),
-      "activities__heading" "activities__weightlift" "activities__cross"
-        "activities__boxing" "activities__yoga" "activities__button",
-      center,
-      stretch
-    );
-    .activities__gym-card {
-      @include size(calc(100vw - 32px), auto);
-      max-width: auto;
-      img {
-        @include size(100%, auto);
-      }
-    }
-    .activities__cross,
-    .activities__yoga {
-      margin-top: map-get($map: $margins, $key: m0);
-    }
-    .activities__heading,
-    .activities__gym-card {
-      margin-bottom: map-get($map: $margins, $key: m15);
-    }
-  }
-  /* Online-classes section */
-  .online-classes {
-    height: 29.75rem;
-    height: auto;
-    padding: map-get($map: $paddings, $key: p0);
-    flex-flow: column nowrap;
-    text-align: $text-center;
-    h2 {
-      margin-bottom: map-get($map: $margins, $key: m1);
-    }
-    .online-classes-mobile__content {
-      padding: $padding-mobile-section 2rem;
-      .online-classes-mobile__content__text--12 {
-        display: block;
-        font-size: map-get($map: $font-sizes, $key: t075);
-      }
-    }
-    .online-classes__image {
-      img {
-        @include size(100%, auto);
-      }
-    }
-  }
-  /* Plans section */
-  .plans {
-    padding: $padding-mobile-section;
-    /*Grid 1x4*/
-    @include grid(
-      1fr,
-      repeat(4, auto),
-      "plans__heading" "plans__button-toggle-container" "plans__normal-plan"
-        "plans__thunder-plan",
-      center,
-      center
-    );
-    .plans__button-toggle-container {
-      @include size(10.75rem, 2.25rem);
-    }
-    .plans__heading {
-      margin-bottom: map-get($map: $margins, $key: m2);
-    }
-    .plans__gym-plan {
-      @include size(calc(100vw - 32px), 35rem);
-      max-width: 22.5rem;
-      margin-top: map-get($map: $margins, $key: m2);
-      .plans__gym-plan__separator {
-        @include size(calc(100% - 32px), auto);
-        margin-top: map-get($map: $margins, $key: m025);
-      }
-      .plans__gym-plan__name {
-        font-size: map-get($map: $font-sizes, $key: t175);
-      }
-      .plans__gym-plan__relevant-info {
-        font-size: map-get($map: $font-sizes, $key: t1);
-        margin-top: map-get($map: $margins, $key: m2);
-      }
-    }
-  }
-  /*Location*/
-  /*Header*/
-  .header-location {
-    padding: $padding-mobile-header;
-  }
-  /* Features section */
-  .features {
-    padding: $padding-mobile-section;
-    .features__gym-features {
-      @include size(calc(100vw - 32px), auto);
-      @include margins(2.5rem, 0, 2.5rem, 0);
-      /*Grid 2x4*/
-      @include grid(
-        repeat(2, 50%),
-        repeat(4, auto),
-        "features__gym-features__lockers features__gym-features__showers"
-          "features__gym-features__glove features__gym-features__dumbbell"
-          "features__gym-features__time features__gym-features__staff"
-          "features__gym-features__gymnastics features__gym-features__air-conditioner",
-        start,
-        stretch
-      );
-      row-gap: 1rem;
-      .features__gym-features__listitem {
-        @include size(calc(100% - 16px), 10.625rem);
-        @include paddings(1rem, 0.5rem, 1rem, 0.5rem);
-        margin: map-get($map: $margins, $key: m0);
-        background-color: map-get($map: $colors, $key: primary);
-        border: 0.0625rem solid map-get($map: $colors, $key: fff);
-        text-align: $text-center;
-      }
-      div {
-        &:nth-child(even) {
-          justify-self: end;
+        .navbar-collapse {
+          .navbar-nav {
+            align-items: center;
+            .nav-item {
+              @include size(auto, 3rem);
+              .nav-link {
+                font-family: $font-heading;
+              }
+              .button--collapsed {
+                color: map-get($map: $colors, $key: primary);
+              }
+            }
+          }
         }
       }
     }
   }
-  /* Information section */
-  .information {
-    padding: $padding-mobile-section;
-    flex-flow: column nowrap;
-    .information__contact-information {
-      h3 {
-        margin-bottom: map-get($map: $margins, $key: m2);
+  /*Index*/
+  .index__body {
+    .header-home {
+      /* Header */
+      @include size(auto, 80vh);
+      background-image: url(../img/home-hero-image-mobile.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      align-items: center;
+      h1,
+      p,
+      div {
+        margin-left: map-get($map: $margins, $key: m1);
+        margin-bottom: map-get($map: $margins, $key: m1);
+        margin-left: map-get($map: $margins, $key: m0);
+        max-width: calc(100vw - 32px);
+        text-align: $text-center;
       }
-      ul {
-        margin-bottom: map-get($map: $margins, $key: m2);
+      p {
+        font-size: map-get($map: $font-sizes, $key: t1);
       }
     }
-    iframe {
-      @include size(100%, auto);
+    main {
+      .activities {
+        /* Activities section */
+        padding: $padding-mobile-section;
+        /*Grid 1x6*/
+        @include grid(
+          1fr,
+          repeat(6, auto),
+          "activities__heading" "activities__weightlift" "activities__cross"
+            "activities__boxing" "activities__yoga" "activities__button",
+          center,
+          stretch
+        );
+        .activities__gym-card {
+          @include size(calc(100vw - 32px), auto);
+          max-width: auto;
+          img {
+            @include size(100%, auto);
+          }
+        }
+        .activities__cross,
+        .activities__yoga {
+          margin-top: map-get($map: $margins, $key: m0);
+        }
+        .activities__heading,
+        .activities__gym-card {
+          margin-bottom: map-get($map: $margins, $key: m15);
+        }
+      }
+      .online-classes {
+        /* Online-classes section */
+        height: 29.75rem;
+        height: auto;
+        padding: map-get($map: $paddings, $key: p0);
+        flex-flow: column nowrap;
+        text-align: $text-center;
+        h2 {
+          margin-bottom: map-get($map: $margins, $key: m1);
+        }
+        .online-classes-mobile__content {
+          padding: $padding-mobile-section 2rem;
+          .online-classes-mobile__content__text--12 {
+            display: block;
+            font-size: map-get($map: $font-sizes, $key: t075);
+          }
+        }
+        .online-classes__image {
+          img {
+            @include size(100%, auto);
+          }
+        }
+      }
+      .plans {
+        /* Plans section */
+        padding: $padding-mobile-section;
+        /*Grid 1x4*/
+        @include grid(
+          1fr,
+          repeat(4, auto),
+          "plans__heading" "plans__button-toggle-container" "plans__normal-plan"
+            "plans__thunder-plan",
+          center,
+          center
+        );
+        .plans__button-toggle-container {
+          @include size(10.75rem, 2.25rem);
+        }
+        .plans__heading {
+          margin-bottom: map-get($map: $margins, $key: m2);
+        }
+        .plans__gym-plan {
+          @include size(calc(100vw - 32px), 35rem);
+          max-width: 22.5rem;
+          margin-top: map-get($map: $margins, $key: m2);
+          .plans__gym-plan__separator {
+            @include size(calc(100% - 32px), auto);
+            margin-top: map-get($map: $margins, $key: m025);
+          }
+          .plans__gym-plan__name {
+            font-size: map-get($map: $font-sizes, $key: t175);
+          }
+          .plans__gym-plan__relevant-info {
+            font-size: map-get($map: $font-sizes, $key: t1);
+            margin-top: map-get($map: $margins, $key: m2);
+          }
+        }
+      }
+    }
+  }
+  /*Location*/
+  .location__body {
+    .header-location {
+      /*Header*/
+      padding: $padding-mobile-header;
+    }
+    .features {
+      /* Features section */
+      padding: $padding-mobile-section;
+      .features__gym-features {
+        @include size(calc(100vw - 32px), auto);
+        @include margins(2.5rem, 0, 2.5rem, 0);
+        /*Grid 2x4*/
+        @include grid(
+          repeat(2, 50%),
+          repeat(4, auto),
+          "features__gym-features__lockers features__gym-features__showers"
+            "features__gym-features__glove features__gym-features__dumbbell"
+            "features__gym-features__time features__gym-features__staff"
+            "features__gym-features__gymnastics features__gym-features__air-conditioner",
+          start,
+          stretch
+        );
+        row-gap: 1rem;
+        .features__gym-features__listitem {
+          @include size(calc(100% - 16px), 10.625rem);
+          @include paddings(1rem, 0.5rem, 1rem, 0.5rem);
+          margin: map-get($map: $margins, $key: m0);
+          background-color: map-get($map: $colors, $key: primary);
+          border: 0.0625rem solid map-get($map: $colors, $key: fff);
+          text-align: $text-center;
+        }
+        div {
+          &:nth-child(even) {
+            justify-self: end;
+          }
+        }
+      }
+    }
+    .information {
+      /* Information section */
+      padding: $padding-mobile-section;
+      flex-flow: column nowrap;
+      .information__contact-information {
+        h3 {
+          margin-bottom: map-get($map: $margins, $key: m2);
+        }
+        ul {
+          margin-bottom: map-get($map: $margins, $key: m2);
+        }
+      }
+      iframe {
+        @include size(100%, auto);
+      }
+    }
+  }
+  /*About Us*/
+  .about-us__body {
+    .header-about-us {
+      /*Header*/
+      @include size(100%, 90vh);
+      padding: $padding-mobile-section;
+      background-size: cover;
+    }
+    .staff {
+      /*Staff Section*/
+      padding: $padding-mobile-section;
+      @include size(100vw, auto);
+      /*Grid 2x5*/
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+      grid-template-rows: repeat(5, auto);
+      h2 {
+        grid-column: 1/3;
+      }
+      .staff__member {
+        img {
+          @include size(calc(100% - 16px), auto);
+        }
+      }
+    }
+  }
+  /*Contact*/
+  .contact__body {
+    .header-contact {
+      /*Header*/
+      padding: $padding-mobile-header;
+    }
+    .contact-form {
+      /*Form*/
+      @include paddings(0, 1rem, 5rem, 1rem);
+    }
+  }
+  /*Login*/
+  .login {
+    /*Layout mobile*/
+    /*Grid 1x2*/
+    @include grid(
+      100vw,
+      repeat(2, 50%),
+      "login__header" "login__section",
+      stretch,
+      stretch
+    );
+    .login__header {
+      padding: $padding-mobile-header;
+    }
+    .login__section {
+      @include paddings(0, 1rem, 5rem, 1rem);
+    }
+    .login__aside {
+      /*Aside*/
+      display: $dnone;
+    }
+  }
+  /*User*/
+  .user__body {
+    .header-user {
+      /*Header*/
+      padding: $padding-mobile-header;
+    }
+    .download {
+      /*Download section*/
+      @include size(100vw, auto);
+      padding: $padding-mobile-section;
+      background-image: url(../img/user-download-background-mobile.png);
+      background-repeat: no-repeat;
+      background-position: 48.5%;
+      /*Grid 2x4*/
+      @include grid(
+        repeat(2, 1fr),
+        repeat(4, auto),
+        "download__heading download__heading"
+          "download__benefit__qr download__benefit__qr"
+          "download__benefit__info download__benefit__info"
+          "button__download__google button__download__apple",
+        stretch,
+        center
+      );
+      .download__heading,
+      .download__benefit__qr,
+      .download__benefit__info {
+        @include size(calc(100vw - 32px), auto);
+      }
+      .download__heading {
+        margin-bottom: map-get($map: $margins, $key: m2);
+      }
+      .download__benefit__info,
+      .download__benefit__qr {
+        div {
+          padding-left: map-get($map: $paddings, $key: p2);
+        }
+      }
+      .download__image {
+        display: $dnone;
+      }
+    }
+    .schedule {
+      /*Schedule section*/
+      padding: $padding-mobile-section;
+      /*Grid 2x3*/
+      @include grid(
+        repeat(1, 1fr),
+        repeat(4, auto),
+        "schedule__gym-classes__boxing" "schedule__gym-classes__crossfit"
+          "schedule__gym-classes__yoga" "schedule__gym-classes__online",
+        center,
+        stretch
+      );
+      .schedule__gym-class {
+        @include size(calc(100vw - 32px), 14.875rem);
+        margin-bottom: map-get($map: $margins, $key: m2);
+        padding: map-get($map: $paddings, $key: p1);
+        .schedule__gym-class__image {
+          margin: map-get($map: $margins, $key: m0);
+          padding-right: map-get($map: $paddings, $key: p1);
+        }
+        .schedule__gym-class__time {
+          display: block;
+          ul {
+            text-align: left;
+            @include margins(1rem, 0, 1rem, 0);
+            padding: map-get($map: $paddings, $key: p0);
+            li {
+              padding-bottom: map-get($map: $paddings, $key: p05);
+            }
+          }
+        }
+      }
+      .schedule__table {
+        display: $dnone;
+      }
     }
   }
   /* Footer */
@@ -240,7 +398,15 @@
     @include paddings(0.5rem, 1.5rem, 0.5rem, 1.5rem);
   }
   .button--toggle {
-    @include size(auto, 2.25rem);
+    @include size(50%, 2.25rem);
     @include paddings(0.5rem, 0, 0.5rem, 0);
+  }
+  .button__download__google,
+  .button__download__apple {
+    @include size(10rem, 4rem);
+    font-size: map-get($map: $font-sizes, $key: t1);
+    @include paddings(0.5rem, 1.5rem, 0.5rem, 1.5rem);
+    justify-self: center;
+    margin-top: map-get($map: $margins, $key: m1);
   }
 }

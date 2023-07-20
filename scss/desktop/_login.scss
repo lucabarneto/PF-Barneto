@@ -9,15 +9,15 @@
     stretch,
     stretch
   );
-  /*Header*/
   .login__header {
+    /*Header*/
     padding: $padding-header;
     text-align: $text-center;
     grid-area: login__header;
     align-self: end;
   }
-  /*Form*/
   .login__section {
+    /*Form*/
     @include paddings(0, 7.5rem, 9rem, 7.5rem);
     grid-area: login__section;
     .login__section__form {
@@ -41,8 +41,8 @@
       }
     }
   }
-  /*Aside*/
   .login__aside {
+    /*Aside*/
     max-width: 100%;
     grid-area: login__aside;
     img {

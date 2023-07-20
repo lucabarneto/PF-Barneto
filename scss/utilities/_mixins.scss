@@ -36,3 +36,15 @@
   position: sticky;
   top: 0;
 }
+
+@mixin button-user {
+  text-decoration: none;
+  @include size(10rem, 3rem);
+  background-color: map-get($map: $colors, $key: secondary);
+  color: map-get($map: $colors, $key: fff);
+  font-size: map-get($map: $font-sizes, $key: t13125);
+  font-weight: 700;
+  border: thin solid map-get($map: $colors, $key: fff);
+  border-radius: 0.5rem;
+  margin-bottom: map-get($map: $margins, $key: m05);
+}

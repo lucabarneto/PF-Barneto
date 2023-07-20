@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
-  <body>
+  <body class="user__body">
     <!-- Nav Desktop -->
     <div class="website-navigation">
       <div class="website-navigation__logo">
@@ -60,6 +60,51 @@
             </a>
           </li>
         </ul>
+      </nav>
+    </div>
+    <!-- Nav mobile -->
+    <div class="website-navigation-mobile">
+      <nav class="navbar navbar-expand-lg website-navigation-mobile__navbar">
+        <div class="container-fluid">
+          <a href="../index.html"><img src="" alt="Company's logo" /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link website-navigation__link"
+                  href="./about-us.html"
+                  >About Us</a
+                >
+              </li>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link website-navigation__link"
+                  href="./contact.html"
+                  >Contact</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link website-navigation__link"
+                  href="./location.html"
+                  >Location</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
     <!-- Header -->
@@ -117,26 +162,60 @@
       <!-- Sección "Schedule" -->
       <section id="schedule" class="schedule">
         <div class="schedule__gym-class schedule__gym-classes__boxing">
-          <img src="../img/user-schedule-svg-boxing.svg" alt="boxing vector" />
-          <div>Boxing Classes</div>
+          <div class="schedule__gym-class__image">
+            <img src="../img/user-schedule-svg-boxing.svg" alt="boxing vector" />
+            <div>Boxing Classes</div>
+          </div>
+          <div class="schedule__gym-class__time">
+            <ul type="none">
+              <li>modays from 19:00hs to 21:00hs</li>
+              <li>wednesdays from 19:00hs to 21:00hs</li>
+              <li>fridays from 19:00hs to 21:00hs</li>
+            </ul>
+          </div>
         </div>
         <div class="schedule__gym-class schedule__gym-classes__crossfit">
-          <img
-            src="../img/user-schedule-svg-crossfit.svg"
-            alt="Crossfit vector"
-          />
-          <div>Crossfit Classes</div>
+          <div class="schedule__gym-class__image">
+            <img
+              src="../img/user-schedule-svg-crossfit.svg"
+              alt="Crossfit vector"
+            />
+            <div>Crossfit Classes</div>
+          </div>
+          <div class="schedule__gym-class__time">
+            <ul type="none">
+              <li>tuesdays from 19:00hs to 21:00hs</li>
+              <li>thursdays from 19:00hs to 21:00hs</li>
+              <li>saturdays from 11:00hs to 12:00hs</li>
+            </ul>
+          </div>
         </div>
         <div class="schedule__gym-class schedule__gym-classes__yoga">
-          <img src="../img/user-schedule-svg-yoga.svg" alt="Yoga vector" />
-          <div>Yoga Classes</div>
+          <div class="schedule__gym-class__image">
+            <img src="../img/user-schedule-svg-yoga.svg" alt="Yoga vector" />
+            <div>Yoga Classes</div>
+          </div>
+          <div class="schedule__gym-class__time">
+            <ul type="none">
+              <li>tuesdays from 14:00hs to 16:00hs</li>
+              <li>thursdays from 14:00hs to 16:00hs</li>
+              <li>saturdays from 14:00hs to 16:00hs</li>
+            </ul>
+          </div>
         </div>
         <div class="schedule__gym-class schedule__gym-classes__online">
-          <img
-            src="../img/user-schedule-svg-online.svg"
-            alt="Computer vector"
-          />
-          <div>Online Classes</div>
+          <div class="schedule__gym-class__image">
+            <img
+              src="../img/user-schedule-svg-online.svg"
+              alt="Computer vector"
+            />
+            <div>Online Classes</div>
+          </div>
+          <div class="schedule__gym-class__time">
+            <ul type="none">
+              <li>modays to fridays at 11:00hs and 17:00hs</li>
+            </ul>
+          </div>
         </div>
         <!-- Tabla con los horarios de clase del gimnasio -->
         <table class="schedule__table">
@@ -443,6 +522,7 @@
             </tr>
           </tbody>
         </table>
+
       </section>
     </main>
     <!-- Footer -->

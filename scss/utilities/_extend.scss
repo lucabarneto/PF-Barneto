@@ -12,6 +12,7 @@
   font-family: $font-heading;
   font-weight: 700;
   border-radius: 0.5rem;
+  border: none;
   text-decoration: none;
   &:hover {
     background-color: map-get($map: $colors, $key: primary);
