@@ -19,6 +19,9 @@
     text-align: $text-center;
     padding: $padding-section;
     grid-area: features;
+    .carousel-mobile {
+      display: $dnone;
+    }
     .carousel-slide {
       /*Carrusel de imágenes*/
       margin-bottom: map-get($map: $margins, $key: m4);

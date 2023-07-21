@@ -34,6 +34,13 @@ a[class="link"] {
   font-weight: 900;
 }
 
+.heading__text-decoration {
+  color: map-get($map: $colors, $key: primary);
+  background-color: map-get($map: $colors, $key: accent);
+  border-radius: 0.5rem;
+  @include paddings(0.25rem, 0.5rem, 0.25rem, 0.5rem);
+}
+
 h1 {
   font-size: map-get($map: $font-sizes, $key: t3125);
   margin-bottom: map-get($map: $margins, $key: m2);

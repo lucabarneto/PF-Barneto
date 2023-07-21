@@ -63,21 +63,24 @@
     .header-home {
       /* Header */
       @include size(auto, 80vh);
-      background-image: url(../img/home-hero-image-mobile.jpg);
+      background-image: url(../img/home-hero-image-mobile.webp);
       background-repeat: no-repeat;
       background-size: cover;
       align-items: center;
-      h1,
-      p,
-      div {
-        margin-left: map-get($map: $margins, $key: m1);
-        margin-bottom: map-get($map: $margins, $key: m1);
-        margin-left: map-get($map: $margins, $key: m0);
-        max-width: calc(100vw - 32px);
-        text-align: $text-center;
-      }
-      p {
-        font-size: map-get($map: $font-sizes, $key: t1);
+      .header-home__content {
+        @include flex(column nowrap, center, center);
+        h1,
+        p,
+        div {
+          margin-left: map-get($map: $margins, $key: m1);
+          margin-bottom: map-get($map: $margins, $key: m1);
+          margin-left: map-get($map: $margins, $key: m0);
+          max-width: calc(100vw - 32px);
+          text-align: $text-center;
+        }
+        p {
+          font-size: map-get($map: $font-sizes, $key: t1);
+        }
       }
     }
     main {
@@ -177,6 +180,12 @@
     }
     .features {
       /* Features section */
+      .carousel-desktop {
+        display: $dnone;
+      }
+      .carousel-mobile {
+        display: block;
+      }
       padding: $padding-mobile-section;
       .features__gym-features {
         @include size(calc(100vw - 32px), auto);
@@ -229,7 +238,8 @@
   .about-us__body {
     .header-about-us {
       /*Header*/
-      @include size(100%, 90vh);
+      // tengo que hacer una bg img para mobile
+      @include size(100%, 115vh);
       padding: $padding-mobile-section;
       background-size: cover;
     }
@@ -294,7 +304,7 @@
       /*Download section*/
       @include size(100vw, auto);
       padding: $padding-mobile-section;
-      background-image: url(../img/user-download-background-mobile.png);
+      background-image: url(../img/user-download-background-mobile.webp);
       background-repeat: no-repeat;
       background-position: 48.5%;
       /*Grid 2x4*/

@@ -6,7 +6,11 @@
 %button {
   @include size(auto, 4rem);
   color: map-get($map: $colors, $key: primary);
-  background-color: map-get($map: $colors, $key: accent);
+  background: linear-gradient(
+    to bottom,
+    map-get($map: $colors, $key: accent),
+    #ebb70a
+  );
   @include paddings(1rem, 2.5rem, 1rem, 2.5rem);
   font-size: map-get($map: $font-sizes, $key: t125);
   font-family: $font-heading;
@@ -15,6 +19,7 @@
   border: none;
   text-decoration: none;
   &:hover {
+    background: none;
     background-color: map-get($map: $colors, $key: primary);
     color: map-get($map: $colors, $key: accent);
     border: thin solid map-get($map: $colors, $key: accent);
