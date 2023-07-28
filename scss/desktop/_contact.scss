@@ -2,6 +2,7 @@
 .contact__body {
   /*Layout de contact*/
   /*Grid 1x3*/
+  background-color: map-get($map: $colors, $key: secondary);
   @include grid(
     100vw,
     repeat(4, auto),
@@ -25,6 +26,9 @@
       }
       .control-submit-contact {
         text-align: $text-center;
+        input {
+          width: 12rem;
+        }
       }
     }
   }

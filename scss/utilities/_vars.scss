@@ -14,3 +14,16 @@ $dnone: none;
 
 // Font headings
 $font-heading: Archivo, sans-serif;
+
+// Box Shadows
+$shadow-default: 0 0.5rem 1rem
+  map-get(
+    $map: $colors,
+    $key: 000,
+  );
+$shadow-hover: 0 0.5rem 0.5rem
+  map-get(
+    $map: $colors,
+    $key: 000,
+  );
+$shadow-none: none;

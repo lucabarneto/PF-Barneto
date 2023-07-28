@@ -30,6 +30,9 @@
         margin-bottom: map-get($map: $margins, $key: m2);
         align-self: center;
       }
+      .control-submit-login {
+        width: 12rem;
+      }
       .create-account {
         a {
           font-family: $font-heading;

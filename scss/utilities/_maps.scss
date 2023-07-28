@@ -1,8 +1,10 @@
 $colors: (
   primary: #131212,
   secondary: #333333,
+  terciary: #6b6b6b,
   accent: #ffe600,
   fff: white,
+  000: black,
 );
 // hacer para margins, paddings, font-sizes, etc
 $margins: (
@@ -19,6 +21,7 @@ $margins: (
 
 $paddings: (
   p2: 2rem,
+  p15: 1.5rem,
   p1: 1rem,
   p05: 0.5rem,
   p0: 0,

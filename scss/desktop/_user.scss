@@ -31,6 +31,7 @@
     );
     .download__heading {
       grid-area: download__heading;
+      align-self: end;
     }
     .download__image {
       grid-area: download__image;
@@ -44,10 +45,13 @@
     .button__download__google {
       grid-area: button__download__google;
       align-self: center;
+      justify-self: center;
+      width: 14rem;
     }
     .button__download__apple {
       grid-area: button__download__apple;
       align-self: center;
+      width: 14rem;
     }
     .download__benefit {
       @include flex(row nowrap, flex-start, center);

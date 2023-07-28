@@ -9,12 +9,17 @@
 .button--toggle {
   @include size(50%, auto);
   margin: map-get($map: $margins, $key: m0);
+  box-shadow: $shadow-none;
+  &:hover {
+    box-shadow: $shadow-none;
+  }
 }
 .button__plan {
   margin-top: map-get($map: $margins, $key: m2);
 }
 .button--off {
   background: none;
+  border: none;
   color: map-get($map: $colors, $key: fff);
   background-color: map-get($map: $colors, $key: primary);
 }

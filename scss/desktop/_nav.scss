@@ -21,6 +21,9 @@
         padding: $padding-nav;
         font-size: map-get($map: $font-sizes, $key: t1);
         font-family: $font-heading;
+        &:nth-child(5) {
+          @include paddings(0.75rem, 1rem, 0.75rem, 1rem);
+        }
         .website-navigation__link {
           &:hover {
             color: map-get($map: $colors, $key: accent);

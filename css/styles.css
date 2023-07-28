@@ -19,8 +19,9 @@
   font-family: Archivo, sans-serif;
   font-weight: 700;
   border-radius: 0.5rem;
-  border: none;
+  border: 1px solid #ffe600;
   text-decoration: none;
+  box-shadow: 0 0.5rem 1rem black;
 }
 .button__download__google:hover,
 .button__download__apple:hover, .button:hover, .button__plan:hover,
@@ -29,6 +30,7 @@
   background-color: #131212;
   color: #ffe600;
   border: thin solid #ffe600;
+  box-shadow: 0 0.5rem 0.5rem black;
 }
 .button__download__google:hover a,
 .button__download__apple:hover a, .button:hover a, .button__plan:hover a,
@@ -158,6 +160,12 @@ h4 {
   font-size: 1rem;
   font-family: Archivo, sans-serif;
 }
+.website-navigation nav ul li:nth-child(5) {
+  padding-top: 0.75rem;
+  padding-right: 1rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+}
 .website-navigation nav ul li .website-navigation__link:hover {
   color: #ffe600;
   text-decoration: underline;
@@ -181,7 +189,7 @@ h4 {
   /*Header*/
   width: auto;
   height: 80vh;
-  background-image: url(../../img/home-hero-image.webp);
+  background-image: url(../img/home-hero-image.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0% 0%;
@@ -200,6 +208,7 @@ h4 {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
+  height: 100%;
   animation-name: fadein;
   animation-iteration-count: 1;
   animation-duration: 2s;
@@ -207,7 +216,7 @@ h4 {
 }
 .index__body .header-home .header-home__content h1,
 .index__body .header-home .header-home__content p,
-.index__body .header-home .header-home__content div {
+.index__body .header-home .header-home__content button {
   margin-left: 9rem;
 }
 .index__body .header-home .header-home__content p {
@@ -218,7 +227,6 @@ h4 {
   /*Activities section*/
   padding: 9rem 7.5rem;
   text-align: center;
-  background-color: #333333;
   /*Grid 4x3*/
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -226,7 +234,6 @@ h4 {
   grid-template-areas: "activities__heading activities__heading activities__heading activities__heading" "activities__weightlift activities__cross activities__boxing activities__yoga" "activities__button activities__button activities__button activities__button";
   justify-items: center;
   align-items: stretch;
-  gap: 1.5rem 1rem;
   grid-area: activities;
 }
 .index__body main .activities .activities__heading {
@@ -265,19 +272,24 @@ h4 {
   padding-right: 0;
   padding-bottom: 0;
   padding-left: 7.5rem;
-  background-color: #ffe600;
-  color: #131212;
+  background-color: #6b6b6b;
+  color: white;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   grid-area: online-classes;
+  overflow: hidden;
 }
 .index__body main .online-classes .online-classes-mobile__content p {
   margin-top: 0;
 }
+.index__body main .online-classes .online-classes__image {
+  width: 50vw;
+  height: 100%;
+}
 .index__body main .online-classes .online-classes__image img {
-  width: auto;
+  width: 50vw;
   height: 100%;
 }
 .index__body main .plans {
@@ -305,6 +317,7 @@ h4 {
   height: 2.5rem;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 8px 16px black;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -320,6 +333,7 @@ h4 {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  border-radius: 0.5rem;
 }
 .index__body main .plans .plans__gym-plan:hover {
   transform: scale(1.1, 1.1);
@@ -402,7 +416,7 @@ h4 {
   width: 100%;
   height: 37.5rem;
   padding: 9rem 7.5rem;
-  background-image: url(../../img/about-us-header-background.webp);
+  background-image: url(../img/about-us-header-background.webp);
   background-repeat: no-repeat;
   text-align: center;
   grid-area: header-about-us;
@@ -428,6 +442,10 @@ h4 {
 .about-us__body .staff .staff__member {
   margin-bottom: 2rem;
 }
+.about-us__body .staff .staff__member img {
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem black;
+}
 .about-us__body .staff .staff__member p {
   margin-top: 1rem;
   margin-bottom: 0;
@@ -449,47 +467,50 @@ h4 {
   text-align: center;
   grid-area: header-location;
 }
-.location__body .features {
-  /*Features Section*/
-  text-align: center;
-  padding: 9rem 7.5rem;
-  grid-area: features;
+.location__body .header-location h1 {
+  margin-bottom: 4rem;
 }
-.location__body .features .carousel-mobile {
+.location__body .header-location .carousel-mobile {
   display: none;
 }
-.location__body .features .carousel-slide {
+.location__body .header-location .carousel-slide {
   /*Carrusel de imágenes*/
   margin-bottom: 4rem;
 }
-.location__body .features .carousel-slide .carousel-inner .carousel-item img {
+.location__body .header-location .carousel-slide .carousel-inner .carousel-item img {
   margin-top: 0;
   margin-right: auto;
   margin-bottom: 0;
   margin-left: auto;
 }
-.location__body .features .carousel-slide .carousel-control-prev,
-.location__body .features .carousel-slide .carousel-control-next {
+.location__body .header-location .carousel-slide .carousel-control-prev,
+.location__body .header-location .carousel-slide .carousel-control-next {
   opacity: 1;
 }
-.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container,
-.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container {
+.location__body .header-location .carousel-slide .carousel-control-prev .carousel-icon-container,
+.location__body .header-location .carousel-slide .carousel-control-next .carousel-icon-container {
   background-color: #333333;
   padding: 0.5rem;
   border-radius: 100px;
 }
-.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left,
-.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right,
-.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left,
-.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right {
+.location__body .header-location .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left,
+.location__body .header-location .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right,
+.location__body .header-location .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left,
+.location__body .header-location .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right {
   font-size: 2rem;
   color: white;
 }
-.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left:hover,
-.location__body .features .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right:hover,
-.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left:hover,
-.location__body .features .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right:hover {
+.location__body .header-location .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-left:hover,
+.location__body .header-location .carousel-slide .carousel-control-prev .carousel-icon-container .bi-chevron-right:hover,
+.location__body .header-location .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-left:hover,
+.location__body .header-location .carousel-slide .carousel-control-next .carousel-icon-container .bi-chevron-right:hover {
   color: #ffe600;
+}
+.location__body .features {
+  /*Features Section*/
+  text-align: center;
+  padding: 9rem 7.5rem;
+  grid-area: features;
 }
 .location__body .features .features__gym-features {
   /*Features*/
@@ -505,17 +526,70 @@ h4 {
   justify-items: center;
   align-items: stretch;
 }
+.location__body .features .features__gym-features input {
+  display: none;
+}
+.location__body .features .features__gym-features .open-modal {
+  color: #ffe600;
+  cursor: pointer;
+}
+.location__body .features .features__gym-features .open-modal:hover {
+  text-decoration: underline;
+}
+.location__body .features .features__gym-features .modal-container {
+  background-color: black;
+  opacity: 0.6;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.location__body .features .features__gym-features .modal-container .modal-content {
+  background-color: #131212;
+  width: fit-content;
+  height: auto;
+  padding: 1.5rem;
+  border: medium solid white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: white label;
+  color-justify-self: end;
+}
+.location__body .features .features__gym-features .modal-container .close-modal {
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.location__body .features .features__gym-features .modal-container #btn-modal-lockers:checked ~ .modal-container {
+  display: flex;
+}
 .location__body .features .features__gym-features .features__gym-features__listitem {
   width: 11.25rem;
   height: 15.5rem;
-  padding-top: 3rem;
-  padding-right: 2rem;
-  padding-bottom: 3rem;
-  padding-left: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  padding-right: 1rem;
+  padding-bottom: 0;
+  padding-left: 1rem;
   margin-top: 2rem;
   background-color: #131212;
-  border: 0.0625rem solid white;
+  border: thin solid white;
+  border-top: medium solid white;
   text-align: center;
+  border-radius: 0.25rem;
 }
 .location__body .features .features__gym-features .features__gym-features__listitem p {
   margin-top: 0.5rem;
@@ -533,9 +607,6 @@ h4 {
 }
 .location__body .features .features__gym-features .features__gym-features__dumbbell {
   grid-area: features__gym-features__dumbbell;
-}
-.location__body .features .features__gym-features .features__gym-features__dumbbell p {
-  margin-top: 0;
 }
 .location__body .features .features__gym-features .features__gym-features__time {
   grid-area: features__gym-features__time;
@@ -573,6 +644,7 @@ h4 {
 .contact__body {
   /*Layout de contact*/
   /*Grid 1x3*/
+  background-color: #333333;
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: repeat(4, auto);
@@ -599,6 +671,9 @@ h4 {
 }
 .contact__body .contact-form form .control-submit-contact {
   text-align: center;
+}
+.contact__body .contact-form form .control-submit-contact input {
+  width: 12rem;
 }
 
 /*Login*/
@@ -640,6 +715,9 @@ h4 {
 .login .login__section .login__section__form .control-submit-login {
   margin-bottom: 2rem;
   align-self: center;
+}
+.login .login__section .login__section__form .control-submit-login {
+  width: 12rem;
 }
 .login .login__section .login__section__form .create-account a {
   font-family: Archivo, sans-serif;
@@ -688,6 +766,7 @@ h4 {
 }
 .user__body .download .download__heading {
   grid-area: download__heading;
+  align-self: end;
 }
 .user__body .download .download__image {
   grid-area: download__image;
@@ -701,10 +780,13 @@ h4 {
 .user__body .download .button__download__google {
   grid-area: button__download__google;
   align-self: center;
+  justify-self: center;
+  width: 14rem;
 }
 .user__body .download .button__download__apple {
   grid-area: button__download__apple;
   align-self: center;
+  width: 14rem;
 }
 .user__body .download .download__benefit {
   display: flex;
@@ -814,6 +896,10 @@ h4 {
   width: 50%;
   height: auto;
   margin: 0;
+  box-shadow: none;
+}
+.button--toggle:hover {
+  box-shadow: none;
 }
 
 .button__plan {
@@ -822,6 +908,7 @@ h4 {
 
 .button--off {
   background: none;
+  border: none;
   color: white;
   background-color: #131212;
 }

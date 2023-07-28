@@ -13,7 +13,7 @@
   .header-home {
     /*Header*/
     @include size(auto, 80vh);
-    background-image: url(../../img/home-hero-image.webp);
+    background-image: url(../img/home-hero-image.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0% 0%;
@@ -25,13 +25,14 @@
     .header-home__content {
       @include paddings(9rem, 0, 9rem, 0);
       @include flex(column nowrap, center, flex-start);
+      height: 100%;
       animation-name: fadein;
       animation-iteration-count: 1;
       animation-duration: 2s;
       animation-timing-function: ease-in;
       h1,
       p,
-      div {
+      button {
         margin-left: map-get($map: $margins, $key: m9);
       }
       h1 {
@@ -48,7 +49,10 @@
       /*Activities section*/
       padding: $padding-section;
       text-align: $text-center;
-      background-color: map-get($map: $colors, $key: secondary);
+      // background-color: map-get($map: $colors, $key: secondary);
+      // background-image: url(../img/background-activities.jpg);
+      // background-repeat: no-repeat;
+      // background-size: cover;
       /*Grid 4x3*/
       @include grid(
         repeat(4, auto),
@@ -59,7 +63,7 @@
         center,
         stretch
       );
-      gap: 1.5rem 1rem;
+      // gap: 1.5rem 1rem;
       grid-area: activities;
       .activities__heading {
         grid-area: activities__heading;
@@ -96,10 +100,11 @@
       /*Online Classes section*/
       @include size(auto, 29rem);
       @include paddings(0, 0, 0, 7.5rem);
-      background-color: map-get($map: $colors, $key: accent);
-      color: map-get($map: $colors, $key: primary);
+      background-color: map-get($map: $colors, $key: terciary);
+      color: map-get($map: $colors, $key: fff);
       @include flex(row nowrap, space-between, center);
       grid-area: online-classes;
+      overflow: hidden;
       .online-classes-mobile__content {
         h2 {
           @extend %margin-heading;
@@ -109,8 +114,9 @@
         }
       }
       .online-classes__image {
+        @include size(50vw, 100%);
         img {
-          @include size(auto, 100%);
+          @include size(50vw, 100%);
         }
       }
     }
@@ -140,6 +146,7 @@
         @include size(24rem, 2.5rem);
         margin-left: map-get($map: $margins, $key: mauto);
         margin-right: map-get($map: $margins, $key: mauto);
+        box-shadow: 0 8px 16px black;
         @include flex(row nowrap, center, stretch);
         grid-area: plans__button-toggle-container;
       }
@@ -148,6 +155,7 @@
         background-color: map-get($map: $colors, $key: primary);
         margin-top: map-get($map: $margins, $key: m4);
         @include flex(column nowrap, center, center);
+        border-radius: 0.5rem;
         &:hover {
           transform: scale(1.1, 1.1);
           transition: 0.25s;

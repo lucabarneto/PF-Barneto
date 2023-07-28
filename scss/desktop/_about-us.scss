@@ -13,7 +13,7 @@
     /*Header*/
     @include size(100%, 37.5rem);
     padding: $padding-section;
-    background-image: url(../../img/about-us-header-background.webp);
+    background-image: url(../img/about-us-header-background.webp);
     background-repeat: no-repeat;
     text-align: $text-center;
     grid-area: header-about-us;
@@ -36,6 +36,10 @@
       margin-bottom: map-get($map: $margins, $key: m4);
     }
     .staff__member {
+      img {
+        border-radius: 0.25rem;
+        box-shadow: $shadow-default;
+      }
       margin-bottom: map-get($map: $margins, $key: m2);
       p {
         margin-top: map-get($map: $margins, $key: m1);
