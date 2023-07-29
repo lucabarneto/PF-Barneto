@@ -649,7 +649,11 @@ h4 {
 .location__body .information .information__contact-information ul li {
   margin-bottom: 1rem;
 }
+.location__body .information iframe {
+  border-radius: 0.5rem;
+}
 
+/*Declaraciones que hacen que funcionen las ventanas modales*/
 #btn-modal-lockers:checked + .modal-container {
   display: flex;
 }
@@ -670,7 +674,15 @@ h4 {
   display: flex;
 }
 
-#btn-modal-staff + .modal-container {
+#btn-modal-staff:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-gymnastics:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-airconditioner:checked + .modal-container {
   display: flex;
 }
 

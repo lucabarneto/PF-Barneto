@@ -462,11 +462,7 @@
                 <br />
                 for your health
               </p>
-              <div>
-                <a href="./about-us.html" class="link" target="_blank"
-                  >Know who we are</a
-                >
-              </div>
+              <a href="./about-us.html" class="link">Know who we are</a>
               <label for="btn-modal-staff" class="button--collapsed"
                 >Close</label
               >
@@ -478,9 +474,9 @@
           >
             <img
               src="../img/location-svg-gymnastics.svg"
-              alt="stickman doing gymnastics"
+              alt="person doing a gymnastic pose"
             />
-            <p>Class only room</p>
+            <p>Class-only room</p>
             <label for="btn-modal-gymnastics" class="open-modal"
               >Know more</label
             >
@@ -490,6 +486,23 @@
             name="btn-modal-gymnastics"
             id="btn-modal-gymnastics"
           />
+          <div class="modal-container">
+            <div class="modal-content">
+              <img
+                src="../img/location-svg-gymnastics.svg"
+                alt="person doing a gymnastic pose"
+              />
+              <h3>Class-only room</h3>
+              <p>
+                A special room equipped with everything you will <br />
+                ever need to give your 100% at the classes
+              </p>
+              <label for="btn-modal-gymnastics" class="button--collapsed"
+                >Close</label
+              >
+            </div>
+            <label for="btn-modal-gymnastics" class="close-modal"></label>
+          </div>
           <div
             class="features__gym-features__listitem features__gym-features__air-conditioner"
           >
@@ -498,6 +511,32 @@
               alt="air conditioner"
             />
             <p>Ventilation</p>
+            <label for="btn-modal-airconditioner" class="open-modal"
+              >Know more</label
+            >
+          </div>
+          <input
+            type="checkbox"
+            name="btn-modal-airconditioner"
+            id="btn-modal-airconditioner"
+          />
+          <div class="modal-container">
+            <div class="modal-content">
+              <img
+                src="../img/location-svg-air-conditioner.svg"
+                alt="air conditioner"
+              />
+              <h3>Ventilation</h3>
+              <p>
+                No more sweating on hot days nor freezing to death in <br />
+                winter, our air conditioners will make you forget <br />
+                about ever feeling a little too cold or hot
+              </p>
+              <label for="btn-modal-airconditioner" class="button--collapsed"
+                >Close</label
+              >
+            </div>
+            <label for="btn-modal-airconditioner" class="close-modal"></label>
           </div>
         </div>
       </section>
@@ -510,7 +549,9 @@
             <li><i class="bi bi-geo-alt-fill"></i> Address, City, State</li>
             <li><i class="bi bi-telephone-fill"></i> (XXX) YYY-ZZZZ</li>
             <li><i class="bi bi-messenger"></i> Messenger</li>
-            <li><i class="bi bi-envelope-at-fill"></i> justarandom@mail.com</li>
+            <li>
+              <i class="bi bi-envelope-at-fill"></i> luca.barneto.uiux@gmail.com
+            </li>
           </ul>
         </div>
         <!-- ubicación cualquiera -->

@@ -76,8 +76,6 @@
         }
       }
       .modal-container {
-        // background-color: map-get($map: $colors, $key: 000);
-        // opacity: 0.6;
         background-color: rgba($color: #000000, $alpha: 0.6);
         @include size(100%, 100vh);
         position: fixed;
@@ -173,8 +171,13 @@
         }
       }
     }
+    iframe {
+      border-radius: 0.5rem;
+    }
   }
 }
+
+/*Declaraciones que hacen que funcionen las ventanas modales*/
 
 #btn-modal-lockers:checked + .modal-container {
   display: flex;
@@ -196,6 +199,14 @@
   display: flex;
 }
 
-#btn-modal-staff + .modal-container {
+#btn-modal-staff:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-gymnastics:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-airconditioner:checked + .modal-container {
   display: flex;
 }
