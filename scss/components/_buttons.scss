@@ -2,6 +2,7 @@
 .button {
   @extend %button;
 }
+.button--collapsed,
 .button__plan,
 .button--toggle {
   @extend %button-special;

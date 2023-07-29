@@ -1,6 +1,6 @@
 /*Nav*/
 .website-navigation {
-  z-index: 1;
+  z-index: 2;
   padding: $padding-header;
   background-color: map-get($map: $colors, $key: primary);
   @extend %sticky;

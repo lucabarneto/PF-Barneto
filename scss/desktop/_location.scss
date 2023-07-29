@@ -76,8 +76,9 @@
         }
       }
       .modal-container {
-        background-color: map-get($map: $colors, $key: 000);
-        opacity: 0.6;
+        // background-color: map-get($map: $colors, $key: 000);
+        // opacity: 0.6;
+        background-color: rgba($color: #000000, $alpha: 0.6);
         @include size(100%, 100vh);
         position: fixed;
         top: 0;
@@ -91,9 +92,18 @@
           @include size(fit-content, auto);
           padding: map-get($map: $paddings, $key: p15);
           border: medium solid map-get($map: $colors, $key: fff);
+          border-radius: 0.5rem;
           @include flex(column nowrap, center, center);
-          color: map-get($map: $colors, $key: fff) label {
-            justify-self: end;
+          color: map-get($map: $colors, $key: fff);
+          h3 {
+            margin-top: map-get($map: $margins, $key: m1);
+          }
+          small {
+            margin-bottom: map-get($map: $margins, $key: m1);
+          }
+          label {
+            align-self: end;
+            cursor: pointer;
           }
         }
         .close-modal {
@@ -102,9 +112,6 @@
           position: absolute;
           top: 0;
           left: 0;
-        }
-        #btn-modal-lockers:checked ~ .modal-container {
-          display: flex;
         }
       }
       .features__gym-features__listitem {
@@ -134,9 +141,6 @@
       }
       .features__gym-features__dumbbell {
         grid-area: features__gym-features__dumbbell;
-        // p {
-        //   margin-top: map-get($map: $margins, $key: m0);
-        // }
       }
       .features__gym-features__time {
         grid-area: features__gym-features__time;
@@ -170,4 +174,28 @@
       }
     }
   }
+}
+
+#btn-modal-lockers:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-shower:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-glove:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-dumbbell:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-time:checked + .modal-container {
+  display: flex;
+}
+
+#btn-modal-staff + .modal-container {
+  display: flex;
 }

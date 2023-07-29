@@ -49,10 +49,6 @@
       /*Activities section*/
       padding: $padding-section;
       text-align: $text-center;
-      // background-color: map-get($map: $colors, $key: secondary);
-      // background-image: url(../img/background-activities.jpg);
-      // background-repeat: no-repeat;
-      // background-size: cover;
       /*Grid 4x3*/
       @include grid(
         repeat(4, auto),
