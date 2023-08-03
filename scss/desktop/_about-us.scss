@@ -13,8 +13,7 @@
     /*Header*/
     @include size(100%, 37.5rem);
     padding: $padding-section;
-    background-image: url(../img/about-us-header-background.webp);
-    background-repeat: no-repeat;
+    @include backgrounds(url(../img/about-us-header-background.webp), cover);
     text-align: $text-center;
     grid-area: header-about-us;
     p {
@@ -23,7 +22,7 @@
   }
   .staff {
     /*Staff Section*/
-    background-color: map-get($map: $colors, $key: secondary);
+    @include backgrounds(url(../img/about-us-staff-background.webp), cover);
     padding: $padding-section;
     text-align: $text-center;
     /* Grid 4x3 */
@@ -36,14 +35,19 @@
       margin-bottom: map-get($map: $margins, $key: m4);
     }
     .staff__member {
+      @include flex(column nowrap, center, center);
       img {
         border-radius: 0.25rem;
         box-shadow: $shadow-default;
       }
       margin-bottom: map-get($map: $margins, $key: m2);
       p {
+        @include paddings(0.5rem, 3rem, 0.5rem, 3rem);
+        @include size(17.625rem, auto);
+        background-color: map-get($map: $colors, $key: primary);
         margin-top: map-get($map: $margins, $key: m1);
         margin-bottom: map-get($map: $margins, $key: m0);
+        border-radius: 0.25rem;
       }
     }
   }

@@ -19,6 +19,7 @@
     display: $dnone;
   }
   .website-navigation-mobile {
+    z-index: 2;
     display: block;
     @include sticky;
     @include size(100vw, auto);
@@ -26,6 +27,11 @@
       background-color: map-get($map: $colors, $key: primary);
       .container-fluid {
         padding: $padding-mobile-header;
+        a {
+          img {
+            @include size(auto, 2.5rem);
+          }
+        }
         .navbar-toggler {
           .bi-list {
             color: map-get($map: $colors, $key: fff);
@@ -63,15 +69,13 @@
     .header-home {
       /* Header */
       @include size(auto, 80vh);
-      background-image: url(../img/home-hero-image-mobile.webp);
-      background-repeat: no-repeat;
-      background-size: cover;
+      @include backgrounds(url(../img/home-hero-image-mobile.webp), cover);
       align-items: center;
       .header-home__content {
         @include flex(column nowrap, center, center);
         h1,
         p,
-        div {
+        button {
           margin-left: map-get($map: $margins, $key: m1);
           margin-bottom: map-get($map: $margins, $key: m1);
           margin-left: map-get($map: $margins, $key: m0);
@@ -86,6 +90,10 @@
     main {
       .activities {
         /* Activities section */
+        @include backgrounds(
+          url(../img/home-activities-background-mobile.webp),
+          cover
+        );
         padding: $padding-mobile-section;
         /*Grid 1x6*/
         @include grid(
@@ -102,6 +110,9 @@
           img {
             @include size(100%, auto);
           }
+          &:hover {
+            transform: none;
+          }
         }
         .activities__cross,
         .activities__yoga {
@@ -114,8 +125,7 @@
       }
       .online-classes {
         /* Online-classes section */
-        height: 29.75rem;
-        height: auto;
+        @include size(100vw, auto);
         padding: map-get($map: $paddings, $key: p0);
         flex-flow: column nowrap;
         text-align: $text-center;
@@ -124,12 +134,9 @@
         }
         .online-classes-mobile__content {
           padding: $padding-mobile-section 2rem;
-          .online-classes-mobile__content__text--12 {
-            display: block;
-            font-size: map-get($map: $font-sizes, $key: t075);
-          }
         }
         .online-classes__image {
+          @include size(100%, auto);
           img {
             @include size(100%, auto);
           }
@@ -138,6 +145,10 @@
       .plans {
         /* Plans section */
         padding: $padding-mobile-section;
+        @include backgrounds(
+          url(../img/home-plans-background-mobile.webp),
+          cover
+        );
         /*Grid 1x4*/
         @include grid(
           1fr,
@@ -158,7 +169,7 @@
           max-width: 22.5rem;
           margin-top: map-get($map: $margins, $key: m2);
           .plans__gym-plan__separator {
-            @include size(calc(100% - 32px), auto);
+            @include size(calc(100% - 32px), 0.125rem);
             margin-top: map-get($map: $margins, $key: m025);
           }
           .plans__gym-plan__name {
@@ -177,15 +188,19 @@
     .header-location {
       /*Header*/
       padding: $padding-mobile-header;
-    }
-    .features {
-      /* Features section */
       .carousel-desktop {
         display: $dnone;
       }
       .carousel-mobile {
         display: block;
       }
+    }
+    .features {
+      /* Features section */
+      @include backgrounds(
+        url(../img/home-features-background-mobile.webp),
+        cover
+      );
       padding: $padding-mobile-section;
       .features__gym-features {
         @include size(calc(100vw - 32px), auto);
@@ -202,8 +217,13 @@
           stretch
         );
         row-gap: 1rem;
+        .modal-container {
+          .modal-content {
+            @include size(calc(100vw - 32px), auto);
+          }
+        }
         .features__gym-features__listitem {
-          @include size(calc(100% - 16px), 10.625rem);
+          @include size(calc(100% - 16px), 15.5rem);
           @include paddings(1rem, 0.5rem, 1rem, 0.5rem);
           margin: map-get($map: $margins, $key: m0);
           background-color: map-get($map: $colors, $key: primary);
@@ -222,6 +242,8 @@
       padding: $padding-mobile-section;
       flex-flow: column nowrap;
       .information__contact-information {
+        @include size(calc(100vw - 32px), 28.125rem);
+        margin-bottom: map-get($map: $margins, $key: m1);
         h3 {
           margin-bottom: map-get($map: $margins, $key: m2);
         }
@@ -230,7 +252,7 @@
         }
       }
       iframe {
-        @include size(100%, auto);
+        @include size(100%, 14rem);
       }
     }
   }
@@ -238,13 +260,16 @@
   .about-us__body {
     .header-about-us {
       /*Header*/
-      // tengo que hacer una bg img para mobile
+      @include backgrounds(url(../img/about-us-background-mobile.webp), cover);
       @include size(100%, 115vh);
       padding: $padding-mobile-section;
-      background-size: cover;
     }
     .staff {
       /*Staff Section*/
+      @include backgrounds(
+        url(../img/about-us-staff-background-mobile.webp),
+        cover
+      );
       padding: $padding-mobile-section;
       @include size(100vw, auto);
       /*Grid 2x5*/
@@ -258,11 +283,17 @@
         img {
           @include size(calc(100% - 16px), auto);
         }
+        p {
+          padding: map-get($map: $paddings, $key: p025);
+          @include size(10.1875rem, auto);
+        }
       }
     }
   }
   /*Contact*/
   .contact__body {
+    @include backgrounds(url(../img/contact-background-mobile.webp), auto);
+    background-position: center top 40px;
     .header-contact {
       /*Header*/
       padding: $padding-mobile-header;
@@ -285,6 +316,9 @@
     );
     .login__header {
       padding: $padding-mobile-header;
+      img {
+        @include size(calc(100vw - 32px), auto);
+      }
     }
     .login__section {
       @include paddings(0, 1rem, 5rem, 1rem);
@@ -304,8 +338,10 @@
       /*Download section*/
       @include size(100vw, auto);
       padding: $padding-mobile-section;
-      background-image: url(../img/user-download-background-mobile.webp);
-      background-repeat: no-repeat;
+      @include backgrounds(
+        url(../img/user-download-background-mobile.webp),
+        auto
+      );
       background-position: 48.5%;
       /*Grid 2x4*/
       @include grid(
@@ -325,6 +361,7 @@
       }
       .download__heading {
         margin-bottom: map-get($map: $margins, $key: m2);
+        text-align: $text-center;
       }
       .download__benefit__info,
       .download__benefit__qr {
@@ -335,31 +372,40 @@
       .download__image {
         display: $dnone;
       }
+      .button__download__apple,
+      .button__download__google {
+        @include size(10rem, 4rem);
+      }
     }
     .schedule {
       /*Schedule section*/
       padding: $padding-mobile-section;
-      /*Grid 2x3*/
+      @include backgrounds(
+        url(../img/user-shcedule-background-mobile.webp),
+        cover
+      );
+      /*Grid 1x5*/
       @include grid(
         repeat(1, 1fr),
-        repeat(4, auto),
-        "schedule__gym-classes__boxing" "schedule__gym-classes__crossfit"
-          "schedule__gym-classes__yoga" "schedule__gym-classes__online",
+        repeat(5, auto),
+        "schedule__heading" "schedule__gym-classes__boxing"
+          "schedule__gym-classes__crossfit" "schedule__gym-classes__yoga"
+          "schedule__gym-classes__online",
         center,
         stretch
       );
       .schedule__gym-class {
-        @include size(calc(100vw - 32px), 14.875rem);
+        @include size(calc(100vw - 32px), 16.875rem);
         margin-bottom: map-get($map: $margins, $key: m2);
         padding: map-get($map: $paddings, $key: p1);
         .schedule__gym-class__image {
           margin: map-get($map: $margins, $key: m0);
-          padding-right: map-get($map: $paddings, $key: p1);
+          padding-right: map-get($map: $paddings, $key: p0);
         }
         .schedule__gym-class__time {
           display: block;
           ul {
-            text-align: left;
+            text-align: $text-center;
             @include margins(1rem, 0, 1rem, 0);
             padding: map-get($map: $paddings, $key: p0);
             li {
@@ -413,9 +459,8 @@
   }
   .button__download__google,
   .button__download__apple {
-    @include size(10rem, 4rem);
     font-size: map-get($map: $font-sizes, $key: t1);
-    @include paddings(0.5rem, 1.5rem, 0.5rem, 1.5rem);
+    @include paddings(0.5rem, 1rem, 0.5rem, 1rem);
     justify-self: center;
     margin-top: map-get($map: $margins, $key: m1);
   }

@@ -15,6 +15,9 @@
     text-align: $text-center;
     grid-area: login__header;
     align-self: end;
+    img {
+      @include size(auto, 8rem);
+    }
   }
   .login__section {
     /*Form*/

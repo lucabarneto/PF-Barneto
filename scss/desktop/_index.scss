@@ -13,10 +13,8 @@
   .header-home {
     /*Header*/
     @include size(auto, 80vh);
-    background-image: url(../img/home-hero-image.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0% 0%;
+    @include backgrounds(url(../img/home-hero-image-desktop.webp), auto);
+    background-position: center right -10%;
     grid-area: header-home;
     animation-name: hero-image;
     animation-iteration-count: 1;
@@ -39,6 +37,7 @@
         @extend %margin-heading;
       }
       p {
+        max-width: 40rem;
         font-size: map-get($map: $font-sizes, $key: t13125);
         margin-bottom: map-get($map: $margins, $key: m2);
       }
@@ -49,6 +48,7 @@
       /*Activities section*/
       padding: $padding-section;
       text-align: $text-center;
+      @include backgrounds(url(../img/home-activities-background.webp), cover);
       /*Grid 4x3*/
       @include grid(
         repeat(4, auto),
@@ -86,9 +86,9 @@
         margin-bottom: map-get($map: $margins, $key: m4);
       }
       .activities__gym-card {
-        .activities__gym-card__text {
-          margin-top: map-get($map: $margins, $key: m1);
-          margin-bottom: map-get($map: $margins, $key: m0);
+        &:hover {
+          transform: scale(1.1, 1.1);
+          transition: 0.25s;
         }
       }
     }
@@ -97,11 +97,14 @@
       @include size(auto, 29rem);
       @include paddings(0, 0, 0, 7.5rem);
       background-color: map-get($map: $colors, $key: terciary);
+      @include backgrounds(url(../img/home-online-classes-vector.webp), auto);
+      background-position: top 0 left 25%;
       color: map-get($map: $colors, $key: fff);
       @include flex(row nowrap, space-between, center);
       grid-area: online-classes;
       overflow: hidden;
       .online-classes-mobile__content {
+        max-width: 39rem;
         h2 {
           @extend %margin-heading;
         }
@@ -120,7 +123,7 @@
       /*Plans Section*/
       padding: $padding-section;
       text-align: $text-center;
-      background-color: map-get($map: $colors, $key: secondary);
+      @include backgrounds(url(../img/home-plans-background.webp), cover);
       /* Grid 2x3 */
       @include grid(
         repeat(2, 50%),
@@ -152,9 +155,11 @@
         margin-top: map-get($map: $margins, $key: m4);
         @include flex(column nowrap, center, center);
         border-radius: 0.5rem;
+        box-shadow: $shadow-default;
         &:hover {
           transform: scale(1.1, 1.1);
           transition: 0.25s;
+          box-shadow: $shadow-hover;
         }
         .plans__gym-plan__name {
           font-family: $font-heading;

@@ -56,7 +56,6 @@
   margin-bottom: 2rem;
 }
 
-.user__body .schedule .schedule__table tbody tr th,
 .user__body .schedule .schedule__table tbody tr td, .user__body .schedule .schedule__table thead th {
   width: 12.5%;
   height: 3rem;
@@ -134,7 +133,10 @@ h4 {
 /*Nav*/
 .website-navigation {
   z-index: 2;
-  padding: 0 7.5rem;
+  padding-top: 0.5rem;
+  padding-right: 7.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 7.5rem;
   background-color: #131212;
   display: flex;
   flex-flow: row nowrap;
@@ -142,11 +144,9 @@ h4 {
   align-items: center;
   grid-area: website-navigation;
 }
-.website-navigation .website-navigation__logo {
+.website-navigation .website-navigation__logo a img {
   width: auto;
   height: 4rem;
-  padding: 1.25rem 1.5rem;
-  font-size: 1rem;
 }
 .website-navigation nav ul {
   padding-left: 0;
@@ -193,10 +193,10 @@ h4 {
   /*Header*/
   width: auto;
   height: 80vh;
-  background-image: url(../img/home-hero-image.webp);
+  background-image: url(../img/home-hero-image-desktop.webp);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0% 0%;
+  background-size: auto;
+  background-position: center right -10%;
   grid-area: header-home;
   animation-name: hero-image;
   animation-iteration-count: 1;
@@ -224,6 +224,7 @@ h4 {
   margin-left: 9rem;
 }
 .index__body .header-home .header-home__content p {
+  max-width: 40rem;
   font-size: 1.3125rem;
   margin-bottom: 2rem;
 }
@@ -231,6 +232,9 @@ h4 {
   /*Activities section*/
   padding: 9rem 7.5rem;
   text-align: center;
+  background-image: url(../img/home-activities-background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
   /*Grid 4x3*/
   display: grid;
   grid-template-columns: repeat(4, auto);
@@ -264,9 +268,9 @@ h4 {
 .index__body main .activities .activities__gym-card {
   margin-bottom: 4rem;
 }
-.index__body main .activities .activities__gym-card .activities__gym-card__text {
-  margin-top: 1rem;
-  margin-bottom: 0;
+.index__body main .activities .activities__gym-card:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.25s;
 }
 .index__body main .online-classes {
   /*Online Classes section*/
@@ -277,6 +281,10 @@ h4 {
   padding-bottom: 0;
   padding-left: 7.5rem;
   background-color: #6b6b6b;
+  background-image: url(../img/home-online-classes-vector.webp);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top 0 left 25%;
   color: white;
   display: flex;
   flex-flow: row nowrap;
@@ -284,6 +292,9 @@ h4 {
   align-items: center;
   grid-area: online-classes;
   overflow: hidden;
+}
+.index__body main .online-classes .online-classes-mobile__content {
+  max-width: 39rem;
 }
 .index__body main .online-classes .online-classes-mobile__content p {
   margin-top: 0;
@@ -300,7 +311,9 @@ h4 {
   /*Plans Section*/
   padding: 9rem 7.5rem;
   text-align: center;
-  background-color: #333333;
+  background-image: url(../img/home-plans-background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
   /* Grid 2x3 */
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -338,10 +351,12 @@ h4 {
   justify-content: center;
   align-items: center;
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem black;
 }
 .index__body main .plans .plans__gym-plan:hover {
   transform: scale(1.1, 1.1);
   transition: 0.25s;
+  box-shadow: 0 0.5rem 0.5rem black;
 }
 .index__body main .plans .plans__gym-plan .plans__gym-plan__name {
   font-family: Archivo, sans-serif;
@@ -422,6 +437,7 @@ h4 {
   padding: 9rem 7.5rem;
   background-image: url(../img/about-us-header-background.webp);
   background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   grid-area: header-about-us;
 }
@@ -430,7 +446,9 @@ h4 {
 }
 .about-us__body .staff {
   /*Staff Section*/
-  background-color: #333333;
+  background-image: url(../img/about-us-staff-background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 9rem 7.5rem;
   text-align: center;
   /* Grid 4x3 */
@@ -444,6 +462,10 @@ h4 {
   margin-bottom: 4rem;
 }
 .about-us__body .staff .staff__member {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
 }
 .about-us__body .staff .staff__member img {
@@ -451,8 +473,16 @@ h4 {
   box-shadow: 0 0.5rem 1rem black;
 }
 .about-us__body .staff .staff__member p {
+  padding-top: 0.5rem;
+  padding-right: 3rem;
+  padding-bottom: 0.5rem;
+  padding-left: 3rem;
+  width: 17.625rem;
+  height: auto;
+  background-color: #131212;
   margin-top: 1rem;
   margin-bottom: 0;
+  border-radius: 0.25rem;
 }
 
 /*Location*/
@@ -515,6 +545,9 @@ h4 {
   text-align: center;
   padding: 9rem 7.5rem;
   grid-area: features;
+  background-image: url(../img/location-features-background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .location__body .features .features__gym-features {
   /*Features*/
@@ -554,7 +587,7 @@ h4 {
 }
 .location__body .features .features__gym-features .modal-container .modal-content {
   background-color: #131212;
-  width: fit-content;
+  width: 30rem;
   height: auto;
   padding: 1.5rem;
   border: medium solid white;
@@ -600,6 +633,7 @@ h4 {
   border-top: medium solid white;
   text-align: center;
   border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem black;
 }
 .location__body .features .features__gym-features .features__gym-features__listitem p {
   margin-top: 0.5rem;
@@ -632,7 +666,7 @@ h4 {
 }
 .location__body .information {
   /*Information Section*/
-  background-color: #333333;
+  background-color: #6b6b6b;
   padding: 9rem 7.5rem;
   display: flex;
   flex-flow: row wrap;
@@ -640,17 +674,36 @@ h4 {
   align-items: flex-start;
   grid-area: information;
 }
-.location__body .information .information__contact-information h3 {
+.location__body .information .information__contact-information {
+  width: 35%;
+  height: 28.125rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  padding-right: 2rem;
+  padding-bottom: 0;
+  padding-left: 2rem;
+  background-color: #8d8d8d;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+.location__body .information .information__contact-information h2 {
   margin-bottom: 2rem;
+  text-align: center;
 }
 .location__body .information .information__contact-information ul {
   padding: 0;
 }
 .location__body .information .information__contact-information ul li {
   margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
 }
 .location__body .information iframe {
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem black;
 }
 
 /*Declaraciones que hacen que funcionen las ventanas modales*/
@@ -688,9 +741,11 @@ h4 {
 
 /*Contact*/
 .contact__body {
+  background-image: url(../img/contact-background.webp);
+  background-repeat: no-repeat;
+  background-size: auto;
   /*Layout de contact*/
-  /*Grid 1x3*/
-  background-color: #333333;
+  /*Grid 1x4*/
   display: grid;
   grid-template-columns: 100vw;
   grid-template-rows: repeat(4, auto);
@@ -704,6 +759,9 @@ h4 {
   text-align: center;
   grid-area: header-contact;
 }
+.contact__body .header-contact h1 {
+  margin-bottom: 4rem;
+}
 .contact__body .contact-form {
   /*Form*/
   padding-top: 0;
@@ -713,7 +771,14 @@ h4 {
   grid-area: contact-form;
 }
 .contact__body .contact-form form .contact-form__form__control {
+  background-color: #131212;
   margin-bottom: 2rem;
+}
+.contact__body .contact-form form .control-textarea {
+  background-color: transparent;
+}
+.contact__body .contact-form form .control-textarea textarea {
+  background-color: #131212;
 }
 .contact__body .contact-form form .control-submit-contact {
   text-align: center;
@@ -739,6 +804,10 @@ h4 {
   text-align: center;
   grid-area: login__header;
   align-self: end;
+}
+.login .login__header img {
+  width: auto;
+  height: 8rem;
 }
 .login .login__section {
   /*Form*/
@@ -853,57 +922,69 @@ h4 {
 }
 .user__body .schedule {
   /*Schedule Section*/
+  background-image: url(../img/user-schedule-background.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 9rem 7.5rem;
   grid-area: schedule;
-  /*Grid 4x2*/
+  /*Grid 4x3*/
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, auto);
-  grid-template-areas: "schedule__gym-classes__boxing schedule__gym-classes__crossfit schedule__gym-classes__yoga schedule__gym-classes__online" "schedule__table schedule__table schedule__table schedule__table";
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: "schedule__heading schedule__heading schedule__heading schedule__heading" "schedule__gym-classes__boxing schedule__gym-classes__crossfit schedule__gym-classes__yoga schedule__gym-classes__online" "schedule__table schedule__table schedule__table schedule__table";
   justify-items: center;
   align-items: stretch;
   text-align: center;
 }
 .user__body .schedule .schedule__gym-class {
+  background-color: #131212;
   margin-bottom: 4rem;
+  width: 13rem;
+  height: auto;
   padding-top: 1rem;
   padding-right: 2.5rem;
   padding-bottom: 1rem;
   padding-left: 2.5rem;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-flow: column nowrap;
+  justify-content: center;
   align-items: center;
   border: thin solid white;
   border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem black;
 }
 .user__body .schedule .schedule__gym-class .schedule__gym-class__image {
   font-family: Archivo, sans-serif;
   font-weight: 700;
-  margin-top: 1rem;
 }
 .user__body .schedule .schedule__gym-class .schedule__gym-class__image img {
   width: 4rem;
   height: 4rem;
+  margin-bottom: 1rem;
 }
 .user__body .schedule .schedule__gym-class .schedule__gym-class__time {
   display: none;
 }
+.user__body .schedule .schedule__heading {
+  grid-area: schedule__heading;
+  margin-bottom: 4rem;
+  justify-self: start;
+}
 .user__body .schedule .schedule__gym-classes__boxing {
   grid-area: schedule__gym-classes__boxing;
-  border-top: thick solid red;
+  border-top: thick solid white;
 }
 .user__body .schedule .schedule__gym-classes__crossfit {
   grid-area: schedule__gym-classes__crossfit;
-  border-top: thick solid orange;
+  border-top: thick solid white;
 }
 .user__body .schedule .schedule__gym-classes__yoga {
   grid-area: schedule__gym-classes__yoga;
-  border-top: thick solid green;
+  border-top: thick solid white;
 }
 .user__body .schedule .schedule__gym-classes__online {
   grid-area: schedule__gym-classes__online;
-  border-top: thick solid violet;
+  border-top: thick solid white;
 }
 .user__body .schedule .schedule__table {
   /*Tabla*/
@@ -918,23 +999,13 @@ h4 {
 }
 .user__body .schedule .schedule__table thead th {
   background-color: #333333;
-  border: thin solid white;
 }
-.user__body .schedule .schedule__table tbody tr th,
 .user__body .schedule .schedule__table tbody tr td {
   border: thin solid white;
+  background-color: #131212;
 }
-.user__body .schedule .schedule__table tbody tr .schedule__table__cell-crossfit {
-  border-top: medium solid orange;
-}
-.user__body .schedule .schedule__table tbody tr .schedule__table__cell-yoga {
-  border-top: medium solid green;
-}
-.user__body .schedule .schedule__table tbody tr .schedule__table__cell-boxing {
-  border-top: medium solid red;
-}
-.user__body .schedule .schedule__table tbody tr .schedule__table__cell-online {
-  border-top: medium solid violet;
+.user__body .schedule .schedule__table tbody tr th {
+  background-color: #333333;
 }
 
 /*Buttons*/
@@ -1011,11 +1082,16 @@ h4 {
 .footer .footer__social-media .footer__social-media__logo {
   text-align: center;
 }
+.footer .footer__social-media .footer__social-media__logo img {
+  width: auto;
+  height: 5.5rem;
+}
 .footer .footer__social-media .footer__social-media__media {
   margin-top: 2rem;
   margin-right: 0;
   margin-bottom: 2rem;
   margin-left: 0;
+  align-self: center;
 }
 .footer .footer__social-media .footer__social-media__media a .bi-footer {
   font-size: 1.75rem;
@@ -1081,6 +1157,7 @@ h4 {
     display: none;
   }
   .website-navigation-mobile {
+    z-index: 2;
     display: block;
     position: sticky;
     top: 0;
@@ -1092,6 +1169,10 @@ h4 {
   }
   .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid {
     padding: 0 1rem;
+  }
+  .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid a img {
+    width: auto;
+    height: 2.5rem;
   }
   .website-navigation-mobile .website-navigation-mobile__navbar .container-fluid .navbar-toggler .bi-list {
     color: white;
@@ -1137,7 +1218,7 @@ h4 {
   }
   .index__body .header-home .header-home__content h1,
   .index__body .header-home .header-home__content p,
-  .index__body .header-home .header-home__content div {
+  .index__body .header-home .header-home__content button {
     margin-left: 1rem;
     margin-bottom: 1rem;
     margin-left: 0;
@@ -1149,6 +1230,9 @@ h4 {
   }
   .index__body main .activities {
     /* Activities section */
+    background-image: url(../img/home-activities-background-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 5rem 1rem;
     /*Grid 1x6*/
     display: grid;
@@ -1167,6 +1251,9 @@ h4 {
     width: 100%;
     height: auto;
   }
+  .index__body main .activities .activities__gym-card:hover {
+    transform: none;
+  }
   .index__body main .activities .activities__cross,
   .index__body main .activities .activities__yoga {
     margin-top: 0;
@@ -1177,7 +1264,7 @@ h4 {
   }
   .index__body main .online-classes {
     /* Online-classes section */
-    height: 29.75rem;
+    width: 100vw;
     height: auto;
     padding: 0;
     flex-flow: column nowrap;
@@ -1189,9 +1276,9 @@ h4 {
   .index__body main .online-classes .online-classes-mobile__content {
     padding: 5rem 1rem 2rem;
   }
-  .index__body main .online-classes .online-classes-mobile__content .online-classes-mobile__content__text--12 {
-    display: block;
-    font-size: 0.75rem;
+  .index__body main .online-classes .online-classes__image {
+    width: 100%;
+    height: auto;
   }
   .index__body main .online-classes .online-classes__image img {
     width: 100%;
@@ -1200,6 +1287,9 @@ h4 {
   .index__body main .plans {
     /* Plans section */
     padding: 5rem 1rem;
+    background-image: url(../img/home-plans-background-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     /*Grid 1x4*/
     display: grid;
     grid-template-columns: 1fr;
@@ -1223,7 +1313,7 @@ h4 {
   }
   .index__body main .plans .plans__gym-plan .plans__gym-plan__separator {
     width: calc(100% - 32px);
-    height: auto;
+    height: 0.125rem;
     margin-top: 0.25rem;
   }
   .index__body main .plans .plans__gym-plan .plans__gym-plan__name {
@@ -1238,15 +1328,18 @@ h4 {
     /*Header*/
     padding: 0 1rem;
   }
-  .location__body .features {
-    /* Features section */
-    padding: 5rem 1rem;
-  }
-  .location__body .features .carousel-desktop {
+  .location__body .header-location .carousel-desktop {
     display: none;
   }
-  .location__body .features .carousel-mobile {
+  .location__body .header-location .carousel-mobile {
     display: block;
+  }
+  .location__body .features {
+    /* Features section */
+    background-image: url(../img/home-features-background-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5rem 1rem;
   }
   .location__body .features .features__gym-features {
     width: calc(100vw - 32px);
@@ -1264,9 +1357,13 @@ h4 {
     align-items: stretch;
     row-gap: 1rem;
   }
+  .location__body .features .features__gym-features .modal-container .modal-content {
+    width: calc(100vw - 32px);
+    height: auto;
+  }
   .location__body .features .features__gym-features .features__gym-features__listitem {
     width: calc(100% - 16px);
-    height: 10.625rem;
+    height: 15.5rem;
     padding-top: 1rem;
     padding-right: 0.5rem;
     padding-bottom: 1rem;
@@ -1284,6 +1381,11 @@ h4 {
     padding: 5rem 1rem;
     flex-flow: column nowrap;
   }
+  .location__body .information .information__contact-information {
+    width: calc(100vw - 32px);
+    height: 28.125rem;
+    margin-bottom: 1rem;
+  }
   .location__body .information .information__contact-information h3 {
     margin-bottom: 2rem;
   }
@@ -1292,18 +1394,23 @@ h4 {
   }
   .location__body .information iframe {
     width: 100%;
-    height: auto;
+    height: 14rem;
   }
   /*About Us*/
   .about-us__body .header-about-us {
     /*Header*/
+    background-image: url(../img/about-us-background-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 115vh;
     padding: 5rem 1rem;
-    background-size: cover;
   }
   .about-us__body .staff {
     /*Staff Section*/
+    background-image: url(../img/about-us-staff-background-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 5rem 1rem;
     width: 100vw;
     height: auto;
@@ -1319,7 +1426,18 @@ h4 {
     width: calc(100% - 16px);
     height: auto;
   }
+  .about-us__body .staff .staff__member p {
+    padding: 0.25rem;
+    width: 10.1875rem;
+    height: auto;
+  }
   /*Contact*/
+  .contact__body {
+    background-image: url(../img/contact-background-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center top 40px;
+  }
   .contact__body .header-contact {
     /*Header*/
     padding: 0 1rem;
@@ -1345,6 +1463,10 @@ h4 {
   .login .login__header {
     padding: 0 1rem;
   }
+  .login .login__header img {
+    width: calc(100vw - 32px);
+    height: auto;
+  }
   .login .login__section {
     padding-top: 0;
     padding-right: 1rem;
@@ -1367,6 +1489,7 @@ h4 {
     padding: 5rem 1rem;
     background-image: url(../img/user-download-background-mobile.webp);
     background-repeat: no-repeat;
+    background-size: auto;
     background-position: 48.5%;
     /*Grid 2x4*/
     display: grid;
@@ -1384,6 +1507,7 @@ h4 {
   }
   .user__body .download .download__heading {
     margin-bottom: 2rem;
+    text-align: center;
   }
   .user__body .download .download__benefit__info div,
   .user__body .download .download__benefit__qr div {
@@ -1392,32 +1516,40 @@ h4 {
   .user__body .download .download__image {
     display: none;
   }
+  .user__body .download .button__download__apple,
+  .user__body .download .button__download__google {
+    width: 10rem;
+    height: 4rem;
+  }
   .user__body .schedule {
     /*Schedule section*/
     padding: 5rem 1rem;
-    /*Grid 2x3*/
+    background-image: url(../img/user-shcedule-background-mobile.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*Grid 1x5*/
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas: "schedule__gym-classes__boxing" "schedule__gym-classes__crossfit" "schedule__gym-classes__yoga" "schedule__gym-classes__online";
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "schedule__heading" "schedule__gym-classes__boxing" "schedule__gym-classes__crossfit" "schedule__gym-classes__yoga" "schedule__gym-classes__online";
     justify-items: center;
     align-items: stretch;
   }
   .user__body .schedule .schedule__gym-class {
     width: calc(100vw - 32px);
-    height: 14.875rem;
+    height: 16.875rem;
     margin-bottom: 2rem;
     padding: 1rem;
   }
   .user__body .schedule .schedule__gym-class .schedule__gym-class__image {
     margin: 0;
-    padding-right: 1rem;
+    padding-right: 0;
   }
   .user__body .schedule .schedule__gym-class .schedule__gym-class__time {
     display: block;
   }
   .user__body .schedule .schedule__gym-class .schedule__gym-class__time ul {
-    text-align: left;
+    text-align: center;
     margin-top: 1rem;
     margin-right: 0;
     margin-bottom: 1rem;
@@ -1481,13 +1613,11 @@ h4 {
   }
   .button__download__google,
   .button__download__apple {
-    width: 10rem;
-    height: 4rem;
     font-size: 1rem;
     padding-top: 0.5rem;
-    padding-right: 1.5rem;
+    padding-right: 1rem;
     padding-bottom: 0.5rem;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
     justify-self: center;
     margin-top: 1rem;
   }

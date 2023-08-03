@@ -53,6 +53,7 @@
     text-align: $text-center;
     padding: $padding-section;
     grid-area: features;
+    @include backgrounds(url(../img/location-features-background.webp), cover);
     .features__gym-features {
       /*Features*/
       @include margins(0, 12.75rem, 0, 12.75rem);
@@ -87,7 +88,7 @@
         z-index: 1;
         .modal-content {
           background-color: map-get($map: $colors, $key: primary);
-          @include size(fit-content, auto);
+          @include size(30rem, auto);
           padding: map-get($map: $paddings, $key: p15);
           border: medium solid map-get($map: $colors, $key: fff);
           border-radius: 0.5rem;
@@ -122,6 +123,7 @@
         border-top: medium solid map-get($map: $colors, $key: fff);
         text-align: $text-center;
         border-radius: 0.25rem;
+        box-shadow: $shadow-default;
         p {
           margin-top: map-get($map: $margins, $key: m05);
           font-family: $font-heading;
@@ -156,23 +158,33 @@
   }
   .information {
     /*Information Section*/
-    background-color: map-get($map: $colors, $key: secondary);
+    background-color: map-get($map: $colors, $key: terciary);
     padding: $padding-section;
     @include flex(row wrap, space-between, flex-start);
     grid-area: information;
     .information__contact-information {
-      h3 {
+      @include size(35%, 28.125rem);
+      @include flex(column nowrap, center, center);
+      @include paddings(0, 2rem, 0, 2rem);
+      background-color: #8d8d8d;
+      border-radius: 0.5rem;
+      z-index: 1;
+      h2 {
         margin-bottom: map-get($map: $margins, $key: m2);
+        text-align: $text-center;
       }
       ul {
         padding: map-get($map: $paddings, $key: p0);
         li {
           margin-bottom: map-get($map: $margins, $key: m1);
+          text-align: $text-center;
+          font-size: map-get($map: $font-sizes, $key: t125);
         }
       }
     }
     iframe {
       border-radius: 0.5rem;
+      box-shadow: $shadow-default;
     }
   }
 }

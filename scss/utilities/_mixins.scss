@@ -31,6 +31,14 @@
   padding-bottom: $pbottom;
   padding-left: $pleft;
 }
+
+// config default de background image
+@mixin backgrounds($image, $size) {
+  background-image: $image;
+  background-repeat: no-repeat;
+  background-size: $size;
+}
+
 // Position sticky de la nav, lo agrego en un mixin porque desde un extend solo no se puede agregar en le media querie mobile
 @mixin sticky {
   position: sticky;

@@ -1,8 +1,8 @@
 /*Contact*/
 .contact__body {
+  @include backgrounds(url(../img/contact-background.webp), auto);
   /*Layout de contact*/
-  /*Grid 1x3*/
-  background-color: map-get($map: $colors, $key: secondary);
+  /*Grid 1x4*/
   @include grid(
     100vw,
     repeat(4, auto),
@@ -15,6 +15,9 @@
     padding: $padding-header;
     text-align: $text-center;
     grid-area: header-contact;
+    h1 {
+      margin-bottom: map-get($map: $margins, $key: m4);
+    }
   }
   .contact-form {
     /*Form*/
@@ -22,7 +25,14 @@
     grid-area: contact-form;
     form {
       .contact-form__form__control {
+        background-color: map-get($map: $colors, $key: primary);
         margin-bottom: map-get($map: $margins, $key: m2);
+      }
+      .control-textarea {
+        background-color: transparent;
+        textarea {
+          background-color: map-get($map: $colors, $key: primary);
+        }
       }
       .control-submit-contact {
         text-align: $text-center;

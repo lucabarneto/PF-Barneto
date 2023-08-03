@@ -19,8 +19,14 @@
     .footer__social-media__logo {
       text-align: $text-center;
     }
+    .footer__social-media__logo {
+      img {
+        @include size(auto, 5.5rem);
+      }
+    }
     .footer__social-media__media {
       @include margins(2rem, 0, 2rem, 0);
+      align-self: center;
       a {
         .bi-footer {
           font-size: map-get($map: $font-sizes, $key: t175);
