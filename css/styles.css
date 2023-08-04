@@ -1235,6 +1235,7 @@ h4 {
     background-image: url(../img/home-hero-image-mobile.webp);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     width: 100vw;
     height: 80vh;
     align-items: center;

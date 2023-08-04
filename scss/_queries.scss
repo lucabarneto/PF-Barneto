@@ -72,6 +72,7 @@
     .header-home {
       /* Header */
       @include backgrounds(url(../img/home-hero-image-mobile.webp), cover);
+      background-position: center;
       @include size(100vw, 80vh);
       align-items: center;
       .header-home__content {
