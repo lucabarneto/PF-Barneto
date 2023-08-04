@@ -4,27 +4,27 @@
 }
 // botones
 %button {
+  @include paddings(1rem, 2.5rem, 1rem, 2.5rem);
   @include size(auto, 4rem);
-  color: map-get($map: $colors, $key: primary);
   background: linear-gradient(
     to bottom,
     map-get($map: $colors, $key: accent),
     #ebb70a
   );
-  @include paddings(1rem, 2.5rem, 1rem, 2.5rem);
+  border: 1px solid map-get($map: $colors, $key: accent);
+  border-radius: map-get($map: $border-radius, $key: b05);
+  box-shadow: $shadow-default;
+  color: map-get($map: $colors, $key: primary);
   font-size: map-get($map: $font-sizes, $key: t125);
   font-family: $font-heading;
-  font-weight: 700;
-  border-radius: 0.5rem;
-  border: 1px solid map-get($map: $colors, $key: accent);
+  font-weight: $bold;
   text-decoration: none;
-  box-shadow: $shadow-default;
   &:hover {
     background: none;
     background-color: map-get($map: $colors, $key: primary);
-    color: map-get($map: $colors, $key: accent);
     border: thin solid map-get($map: $colors, $key: accent);
     box-shadow: $shadow-hover;
+    color: map-get($map: $colors, $key: accent);
     a {
       color: map-get($map: $colors, $key: accent);
     }
@@ -33,8 +33,8 @@
 %button-special {
   @extend %button;
   @include size(auto, 2.5rem);
-  padding: $padding-button-special;
   font-size: map-get($map: $font-sizes, $key: t1);
+  padding: $padding-button-special;
   text-align: center;
 }
 // margins generales

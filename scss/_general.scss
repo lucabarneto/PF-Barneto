@@ -1,8 +1,8 @@
 /*Generales*/
 html {
-  scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 *,
 *:before,
@@ -10,9 +10,9 @@ html {
   box-sizing: inherit;
 }
 body {
-  font-family: Roboto_Condensed variant0, sans-serif;
   background-color: map-get($map: $colors, $key: primary);
   color: map-get($map: $colors, $key: fff);
+  font-family: Roboto_Condensed variant0, sans-serif;
 }
 
 /*Links*/
@@ -33,14 +33,14 @@ a[class="link"] {
 /* Headings */
 .heading {
   font-family: $font-heading;
-  font-weight: 900;
+  font-weight: $black;
 }
 
 .heading__text-decoration {
-  color: map-get($map: $colors, $key: primary);
-  background-color: map-get($map: $colors, $key: accent);
-  border-radius: 0.5rem;
   @include paddings(0.25rem, 0.5rem, 0.25rem, 0.5rem);
+  background-color: map-get($map: $colors, $key: accent);
+  border-radius: map-get($map: $border-radius, $key: b05);
+  color: map-get($map: $colors, $key: primary);
 }
 
 h1 {

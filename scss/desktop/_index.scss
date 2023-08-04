@@ -12,22 +12,22 @@
   );
   .header-home {
     /*Header*/
-    @include size(auto, 80vh);
     @include backgrounds(url(../img/home-hero-image-desktop.webp), auto);
     background-position: center right -10%;
-    grid-area: header-home;
+    @include size(auto, 80vh);
     animation-name: hero-image;
     animation-iteration-count: 1;
     animation-duration: 3s;
     animation-timing-function: ease-in;
+    grid-area: header-home;
     .header-home__content {
-      @include paddings(9rem, 0, 9rem, 0);
       @include flex(column nowrap, center, flex-start);
-      height: 100%;
+      @include paddings(9rem, 0, 9rem, 0);
       animation-name: fadein;
       animation-iteration-count: 1;
       animation-duration: 2s;
       animation-timing-function: ease-in;
+      height: 100%;
       h1,
       p,
       button {
@@ -37,18 +37,15 @@
         @extend %margin-heading;
       }
       p {
-        max-width: 40rem;
         font-size: map-get($map: $font-sizes, $key: t13125);
         margin-bottom: map-get($map: $margins, $key: m2);
+        max-width: 40rem;
       }
     }
   }
   main {
     .activities {
       /*Activities section*/
-      padding: $padding-section;
-      text-align: $text-center;
-      @include backgrounds(url(../img/home-activities-background.webp), cover);
       /*Grid 4x3*/
       @include grid(
         repeat(4, auto),
@@ -59,8 +56,10 @@
         center,
         stretch
       );
-      // gap: 1.5rem 1rem;
+      @include backgrounds(url(../img/home-activities-background.webp), cover);
       grid-area: activities;
+      padding: $padding-section;
+      text-align: $text-center;
       .activities__heading {
         grid-area: activities__heading;
       }
@@ -68,15 +67,15 @@
         grid-area: activities__weightlift;
       }
       .activities__cross {
-        margin-top: map-get($map: $margins, $key: m4);
         grid-area: activities__cross;
+        margin-top: map-get($map: $margins, $key: m4);
       }
       .activities__boxing {
         grid-area: activities__boxing;
       }
       .activities__yoga {
-        margin-top: map-get($map: $margins, $key: m4);
         grid-area: activities__yoga;
+        margin-top: map-get($map: $margins, $key: m4);
       }
       .activities__button {
         grid-area: activities__button;
@@ -94,13 +93,13 @@
     }
     .online-classes {
       /*Online Classes section*/
-      @include size(auto, 29rem);
-      @include paddings(0, 0, 0, 7.5rem);
-      background-color: map-get($map: $colors, $key: terciary);
       @include backgrounds(url(../img/home-online-classes-vector.webp), auto);
       background-position: top 0 left 25%;
-      color: map-get($map: $colors, $key: fff);
       @include flex(row nowrap, space-between, center);
+      @include paddings(0, 0, 0, 7.5rem);
+      @include size(auto, 29rem);
+      background-color: map-get($map: $colors, $key: terciary);
+      color: map-get($map: $colors, $key: fff);
       grid-area: online-classes;
       overflow: hidden;
       .online-classes-mobile__content {
@@ -121,8 +120,6 @@
     }
     .plans {
       /*Plans Section*/
-      padding: $padding-section;
-      text-align: $text-center;
       @include backgrounds(url(../img/home-plans-background.webp), cover);
       /* Grid 2x3 */
       @include grid(
@@ -134,55 +131,63 @@
         center,
         center
       );
+      padding: $padding-section;
+      text-align: $text-center;
       grid-area: plans;
+      input {
+        display: none;
+      }
       .plans__heading {
         margin-bottom: map-get($map: $margins, $key: m4);
         grid-area: plans__heading;
       }
       .plans__button-toggle-container {
-        background-color: map-get($map: $colors, $key: primary);
-        border-radius: 0.5rem;
+        @include flex(row nowrap, center, stretch);
         @include size(24rem, 2.5rem);
+        background-color: map-get($map: $colors, $key: primary);
+        border-radius: map-get($map: $border-radius, $key: b05);
+        box-shadow: 0 8px 16px black;
+        grid-area: plans__button-toggle-container;
         margin-left: map-get($map: $margins, $key: mauto);
         margin-right: map-get($map: $margins, $key: mauto);
-        box-shadow: 0 8px 16px black;
-        @include flex(row nowrap, center, stretch);
-        grid-area: plans__button-toggle-container;
       }
       .plans__gym-plan {
+        @include flex(column nowrap, center, center);
         @include size(24rem, 41rem);
         background-color: map-get($map: $colors, $key: primary);
-        margin-top: map-get($map: $margins, $key: m4);
-        @include flex(column nowrap, center, center);
-        border-radius: 0.5rem;
+        border-radius: map-get($map: $border-radius, $key: b05);
         box-shadow: $shadow-default;
+        margin-top: map-get($map: $margins, $key: m4);
         &:hover {
+          box-shadow: $shadow-hover;
           transform: scale(1.1, 1.1);
           transition: 0.25s;
-          box-shadow: $shadow-hover;
         }
-        .plans__gym-plan__name {
-          font-family: $font-heading;
-          font-size: map-get($map: $font-sizes, $key: t2375);
-        }
-        .plans__gym-plan__separator {
-          background-color: map-get($map: $colors, $key: fff);
-          @include size(22rem, 0.125rem);
-          margin-top: map-get($map: $margins, $key: m025);
-        }
-        .plans__gym-plan__relevant-info {
-          font-family: $font-heading;
-          font-size: map-get($map: $font-sizes, $key: t13125);
-          margin-top: map-get($map: $margins, $key: m2);
-        }
-        .plans__gym-plan__benefits {
-          padding-left: map-get($map: $paddings, $key: p0);
-          @include margins(1rem, 0, 0, 0);
-          li {
-            @include paddings(0.5rem, 0, 0.5rem, 0);
-            text-align: $text-center;
-            .bi-plans {
-              padding-right: map-get($map: $paddings, $key: p05);
+        .plans__annually,
+        .plans__monthly {
+          .plans__gym-plan__name {
+            font-family: $font-heading;
+            font-size: map-get($map: $font-sizes, $key: t2375);
+          }
+          .plans__gym-plan__separator {
+            @include size(22rem, 0.125rem);
+            background-color: map-get($map: $colors, $key: fff);
+            margin-top: map-get($map: $margins, $key: m025);
+          }
+          .plans__gym-plan__relevant-info {
+            font-family: $font-heading;
+            font-size: map-get($map: $font-sizes, $key: t175);
+            margin-top: map-get($map: $margins, $key: m2);
+          }
+          .plans__gym-plan__benefits {
+            @include margins(1rem, 0, 0, 0);
+            padding-left: map-get($map: $paddings, $key: p0);
+            li {
+              @include paddings(0.5rem, 0, 0.5rem, 0);
+              text-align: $text-center;
+              .bi-plans {
+                padding-right: map-get($map: $paddings, $key: p05);
+              }
             }
           }
         }
@@ -194,28 +199,57 @@
         grid-area: plans__thunder-plan;
         .plans__thunder-plan__tag {
           color: map-get($map: $colors, $key: accent);
-          font-weight: 900;
+          font-weight: $black;
         }
       }
     }
   }
 }
 
-@keyframes fadein {
-  0% {
-    position: absolute;
-    left: -100%;
-  }
-  100% {
-    position: absolute;
-    left: 0;
+/*Declaraciones que hacen que funcione el switch*/
+
+#btn-switch-monthly:checked ~ .plans__gym-plan .plans__monthly {
+  display: block;
+}
+
+#btn-switch-monthly:checked ~ .plans__gym-plan .plans__annually {
+  display: none;
+}
+
+#btn-switch-monthly:checked ~ .plans__button-toggle-container .btn-annually {
+  background: none;
+  background-color: map-get($map: $colors, $key: primary);
+  border: none;
+  color: map-get($map: $colors, $key: fff);
+  &:hover {
+    border: thin solid map-get($map: $colors, $key: accent);
+    color: map-get($map: $colors, $key: accent);
   }
 }
-@keyframes hero-image {
-  0% {
-    opacity: 0;
+
+#btn-switch-monthly:checked ~ .plans__button-toggle-container .btn-monthly {
+  pointer-events: none;
+}
+
+#btn-switch-annually:checked ~ .plans__gym-plan .plans__monthly {
+  display: none;
+}
+
+#btn-switch-annually:checked ~ .plans__gym-plan .plans__annually {
+  display: block;
+}
+
+#btn-switch-annually:checked ~ .plans__button-toggle-container .btn-monthly {
+  background: none;
+  background-color: map-get($map: $colors, $key: primary);
+  border: none;
+  color: map-get($map: $colors, $key: fff);
+  &:hover {
+    border: thin solid map-get($map: $colors, $key: accent);
+    color: map-get($map: $colors, $key: accent);
   }
-  100% {
-    opacity: 1;
-  }
+}
+
+#btn-switch-annually:checked ~ .plans__button-toggle-container .btn-annually {
+  pointer-events: none;
 }

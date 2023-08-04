@@ -1,7 +1,5 @@
 /*Footer*/
 .footer {
-  background-color: map-get($map: $colors, $key: primary);
-  padding: $padding-section 0;
   /* Grid 3x2 */
   @include grid(
     repeat(3, 33.33%),
@@ -11,7 +9,9 @@
     center,
     stretch
   );
+  background-color: map-get($map: $colors, $key: primary);
   grid-area: footer;
+  padding: $padding-section 0;
   .footer__social-media {
     @include flex(column nowrap, center, stretch);
     grid-area: footer__social-media;
@@ -29,8 +29,8 @@
       align-self: center;
       a {
         .bi-footer {
-          font-size: map-get($map: $font-sizes, $key: t175);
           @include paddings(0, 1rem, 0, 1rem);
+          font-size: map-get($map: $font-sizes, $key: t175);
           &:hover {
             color: map-get($map: $colors, $key: accent);
           }
@@ -59,9 +59,9 @@
     }
   }
   .footer__copyright {
-    text-align: $text-center;
     grid-area: footer__copyright;
     justify-self: stretch;
+    text-align: $text-center;
     .footer__copyright__separator {
       @include size(100%, 0.25rem);
       background-color: map-get($map: $colors, $key: fff);

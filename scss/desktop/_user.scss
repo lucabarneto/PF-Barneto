@@ -11,14 +11,11 @@
   );
   .header-user {
     /*Header*/
-    padding: $padding-header;
     grid-area: header-user;
+    padding: $padding-header;
   }
   .download {
     /*Download section*/
-    padding: $padding-section;
-    grid-area: download;
-    // background-color: map-get($map: $colors, $key: secondary);
     /*Grid 3x4*/
     @include grid(
       repeat(3, 33.33%),
@@ -30,9 +27,11 @@
       stretch,
       stretch
     );
+    grid-area: download;
+    padding: $padding-section;
     .download__heading {
-      grid-area: download__heading;
       align-self: end;
+      grid-area: download__heading;
     }
     .download__image {
       grid-area: download__image;
@@ -44,14 +43,14 @@
       grid-area: download__benefit__info;
     }
     .button__download__google {
-      grid-area: button__download__google;
       align-self: center;
+      grid-area: button__download__google;
       justify-self: center;
       width: 14rem;
     }
     .button__download__apple {
-      grid-area: button__download__apple;
       align-self: center;
+      grid-area: button__download__apple;
       width: 14rem;
     }
     .download__benefit {
@@ -72,8 +71,6 @@
   .schedule {
     /*Schedule Section*/
     @include backgrounds(url(../img/user-schedule-background.webp), cover);
-    padding: $padding-section;
-    grid-area: schedule;
     /*Grid 4x3*/
     @include grid(
       repeat(4, 1fr),
@@ -84,23 +81,26 @@
       center,
       stretch
     );
+    grid-area: schedule;
+    padding: $padding-section;
     text-align: $text-center;
     .schedule__gym-class {
-      background-color: map-get($map: $colors, $key: primary);
-      margin-bottom: map-get($map: $margins, $key: m4);
-      @include size(13rem, auto);
-      @include paddings(1rem, 2.5rem, 1rem, 2.5rem);
       @include flex(column nowrap, center, center);
+      @include paddings(1rem, 2.5rem, 1rem, 2.5rem);
+      @include size(13rem, auto);
+      background-color: map-get($map: $colors, $key: primary);
       border: thin solid map-get($map: $colors, $key: fff);
-      border-radius: 0.5rem;
+      border-top: thick solid map-get($map: $colors, $key: fff);
+      border-radius: map-get($map: $border-radius, $key: b05);
       box-shadow: $shadow-default;
+      margin-bottom: map-get($map: $margins, $key: m4);
       .schedule__gym-class__image {
         img {
           @include size(4rem, 4rem);
           margin-bottom: map-get($map: $margins, $key: m1);
         }
         font-family: $font-heading;
-        font-weight: 700;
+        font-weight: $bold;
       }
       .schedule__gym-class__time {
         display: none;
@@ -108,47 +108,43 @@
     }
     .schedule__heading {
       grid-area: schedule__heading;
-      margin-bottom: map-get($map: $margins, $key: m4);
       justify-self: start;
+      margin-bottom: map-get($map: $margins, $key: m4);
     }
     .schedule__gym-classes__boxing {
       grid-area: schedule__gym-classes__boxing;
-      border-top: thick solid map-get($map: $colors, $key: fff);
     }
     .schedule__gym-classes__crossfit {
       grid-area: schedule__gym-classes__crossfit;
-      border-top: thick solid map-get($map: $colors, $key: fff);
     }
     .schedule__gym-classes__yoga {
       grid-area: schedule__gym-classes__yoga;
-      border-top: thick solid map-get($map: $colors, $key: fff);
     }
     .schedule__gym-classes__online {
       grid-area: schedule__gym-classes__online;
-      border-top: thick solid map-get($map: $colors, $key: fff);
     }
     .schedule__table {
       /*Tabla*/
       grid-area: schedule__table;
-      width: 100%;
       margin: map-get($map: $margins, $key: m0);
-      text-align: $text-center;
       margin-bottom: map-get($map: $margins, $key: m4);
+      text-align: $text-center;
+      width: 100%;
       caption {
         display: $dnone;
       }
       thead {
         th {
-          background-color: map-get($map: $colors, $key: secondary);
           @extend %table;
+          background-color: map-get($map: $colors, $key: secondary);
         }
       }
       tbody {
         tr {
           td {
             @extend %table;
-            border: thin solid map-get($map: $colors, $key: fff);
             background-color: map-get($map: $colors, $key: primary);
+            border: thin solid map-get($map: $colors, $key: fff);
           }
           th {
             background-color: map-get($map: $colors, $key: secondary);

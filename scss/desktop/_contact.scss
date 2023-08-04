@@ -12,9 +12,9 @@
   );
   .header-contact {
     /*Header*/
+    grid-area: header-contact;
     padding: $padding-header;
     text-align: $text-center;
-    grid-area: header-contact;
     h1 {
       margin-bottom: map-get($map: $margins, $key: m4);
     }

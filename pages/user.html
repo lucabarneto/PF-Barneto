@@ -7,6 +7,11 @@
     <title>User | THUNDER Fitness</title>
     <meta name="description" content="Download our mobile app · Classes's shcedule">
     <meta name="theme-color" content="#ffe600" />
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="Thunder Fitness, gimnasio, entrenar, salud, fuerza, boxing, crossfit, yoga, levantamiento de pesas, intenso, clases online, app, cronograma, qr, perfil, información"
+    />
     <!-- Favicon -->
     <link rel="icon" href="../img/favicon.webp" />
     <link rel="apple-touch-icon" href="../img/favicon.webp" />
@@ -156,16 +161,17 @@
         <div class="download__image">
           <img
             src="../img/user-download-background.webp"
-            alt="white cellphone"
+            alt="white cellphone with company's logo"
           />
         </div>
       </section>
       <!-- Sección "Schedule" -->
       <section id="schedule" class="schedule">
         <h2 class="heading schedule__heading">ALL THE INFORMATION YOU NEED IN ONE PLACE</h2>
+        <!-- schedule__gym-class__time solo aparece en mobile, esto es para evitar usar la table en esa vista ya que trae varios problemas -->
         <div class="schedule__gym-class schedule__gym-classes__boxing">
           <div class="schedule__gym-class__image">
-            <img src="../img/user-schedule-svg-boxing.svg" alt="boxing vector" />
+            <img src="../img/user-schedule-svg-boxing.svg" alt="boxing glove vector" />
             <div>Boxing Classes</div>
           </div>
           <div class="schedule__gym-class__time">
@@ -180,7 +186,7 @@
           <div class="schedule__gym-class__image">
             <img
               src="../img/user-schedule-svg-crossfit.svg"
-              alt="Crossfit vector"
+              alt="vector of a person holding a bar with both hands"
             />
             <div>Crossfit Classes</div>
           </div>
@@ -194,7 +200,7 @@
         </div>
         <div class="schedule__gym-class schedule__gym-classes__yoga">
           <div class="schedule__gym-class__image">
-            <img src="../img/user-schedule-svg-yoga.svg" alt="Yoga vector" />
+            <img src="../img/user-schedule-svg-yoga.svg" alt="person doing yoga vector" />
             <div>Yoga Classes</div>
           </div>
           <div class="schedule__gym-class__time">
@@ -225,17 +231,17 @@
             Activitie's timetable
           </caption>
           <thead>
-            <th>Time</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
+            <th scope="rowgroup">Time</th>
+            <th scope="col">Monday</th>
+            <th scope="col">Tuesday</th>
+            <th scope="col">Wednesday</th>
+            <th scope="col">Thursday</th>
+            <th scope="col">Friday</th>
+            <th scope="col">Saturday</th>
           </thead>
           <tbody>
             <tr>
-              <th>10:00hs</th>
+              <th scope="row">10:00hs</th>
               <td></td>
               <td></td>
               <td></td>
@@ -244,7 +250,7 @@
               <td></td>
             </tr>
             <tr>
-              <th>11:00hs</th>
+              <th scope="row">11:00hs</th>
               <td>
                 <img
                   src="../img/user-schedule-svg-online.svg"
@@ -278,12 +284,12 @@
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
             </tr>
             <tr>
-              <th>12:00hs</th>
+              <th scope="row">12:00hs</th>
               <td></td>
               <td></td>
               <td></td>
@@ -292,12 +298,12 @@
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
             </tr>
             <tr>
-              <th>13:00hs</th>
+              <th scope="row">13:00hs</th>
               <td></td>
               <td></td>
               <td></td>
@@ -306,79 +312,79 @@
               <td></td>
             </tr>
             <tr>
-              <th>14:00hs</th>
+              <th scope="row">14:00hs</th>
               <td></td>
               <td>
                 <img
                   src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
+                  alt="person doing yoga vector"
                 />
               </td>
               <td></td>
               <td>
                 <img
                   src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
+                  alt="person doing yoga vector"
                 />
               </td>
               <td></td>
               <td>
                 <img
                   src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
-                />
-              </td>
-            </tr>
-            <tr>
-              <th>15:00hs</th>
-              <td></td>
-              <td>
-                <img
-                  src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
-                />
-              </td>
-              <td></td>
-              <td>
-                <img
-                  src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
-                />
-              </td>
-              <td></td>
-              <td>
-                <img
-                  src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
+                  alt="person doing yoga vector"
                 />
               </td>
             </tr>
             <tr>
-              <th>16:00hs</th>
+              <th scope="row">15:00hs</th>
               <td></td>
               <td>
                 <img
                   src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
+                  alt="person doing yoga vector"
                 />
               </td>
               <td></td>
               <td>
                 <img
                   src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
+                  alt="person doing yoga vector"
                 />
               </td>
               <td></td>
               <td>
                 <img
                   src="../img/user-schedule-svg-yoga.svg"
-                  alt="Yoga vector"
+                  alt="person doing yoga vector"
                 />
               </td>
             </tr>
             <tr>
-              <th>17:00hs</th>
+              <th scope="row">16:00hs</th>
+              <td></td>
+              <td>
+                <img
+                  src="../img/user-schedule-svg-yoga.svg"
+                  alt="person doing yoga vector"
+                />
+              </td>
+              <td></td>
+              <td>
+                <img
+                  src="../img/user-schedule-svg-yoga.svg"
+                  alt="person doing yoga vector"
+                />
+              </td>
+              <td></td>
+              <td>
+                <img
+                  src="../img/user-schedule-svg-yoga.svg"
+                  alt="person doing yoga vector"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">17:00hs</th>
               <td>
                 <img
                   src="../img/user-schedule-svg-online.svg"
@@ -412,109 +418,109 @@
               <td></td>
             </tr>
             <tr>
-              <th>18:00hs</th>
+              <th scope="row">18:00hs</th>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td></td>
             </tr>
             <tr>
-              <th>19:00hs</th>
+              <th scope="row">19:00hs</th>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td></td>
             </tr>
             <tr>
-              <th>20:00hs</th>
+              <th scope="row">20:00hs</th>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-crossfit.svg"
-                  alt="Crossfit vector"
+                  alt="vector of a person holding a bar with both hands"
                 />
               </td>
               <td>
                 <img
                   src="../img/user-schedule-svg-boxing.svg"
-                  alt="Boxing vector"
+                  alt="Boxing glove vector"
                 />
               </td>
               <td></td>
             </tr>
             <tr>
-              <th>21:00hs</th>
+              <th scope="row">21:00hs</th>
               <td></td>
               <td></td>
               <td></td>

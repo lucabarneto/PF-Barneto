@@ -10,9 +10,9 @@
   );
   .header-location {
     /*Header*/
+    grid-area: header-location;
     padding: $padding-header;
     text-align: $text-center;
-    grid-area: header-location;
     h1 {
       margin-bottom: map-get($map: $margins, $key: m4);
     }
@@ -29,34 +29,16 @@
           }
         }
       }
-      .carousel-control-prev,
-      .carousel-control-next {
-        opacity: 1;
-        .carousel-icon-container {
-          background-color: map-get($map: $colors, $key: secondary);
-          padding: map-get($map: $paddings, $key: p05);
-          border-radius: 100px;
-          .bi-chevron-left,
-          .bi-chevron-right {
-            font-size: map-get($map: $font-sizes, $key: t2);
-            color: map-get($map: $colors, $key: fff);
-            &:hover {
-              color: map-get($map: $colors, $key: accent);
-            }
-          }
-        }
-      }
     }
   }
   .features {
     /*Features Section*/
-    text-align: $text-center;
-    padding: $padding-section;
-    grid-area: features;
     @include backgrounds(url(../img/location-features-background.webp), cover);
+    grid-area: features;
+    padding: $padding-section;
+    text-align: $text-center;
     .features__gym-features {
       /*Features*/
-      @include margins(0, 12.75rem, 0, 12.75rem);
       /*Grid 4x2*/
       @include grid(
         repeat(4, 25%),
@@ -66,6 +48,8 @@
         center,
         stretch
       );
+      @include margins(0, 12.75rem, 0, 12.75rem);
+      /*Declaraciones de las ventanas modales*/
       input {
         display: none;
       }
@@ -77,23 +61,23 @@
         }
       }
       .modal-container {
-        background-color: rgba($color: #000000, $alpha: 0.6);
         @include size(100%, 100vh);
+        align-items: center;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        display: none;
+        justify-content: center;
         position: fixed;
         top: 0;
         left: 0;
-        display: none;
-        justify-content: center;
-        align-items: center;
         z-index: 1;
         .modal-content {
-          background-color: map-get($map: $colors, $key: primary);
-          @include size(30rem, auto);
-          padding: map-get($map: $paddings, $key: p15);
-          border: medium solid map-get($map: $colors, $key: fff);
-          border-radius: 0.5rem;
           @include flex(column nowrap, center, center);
+          @include size(30rem, auto);
+          background-color: map-get($map: $colors, $key: primary);
+          border: medium solid map-get($map: $colors, $key: fff);
+          border-radius: map-get($map: $border-radius, $key: b05);
           color: map-get($map: $colors, $key: fff);
+          padding: map-get($map: $paddings, $key: p15);
           h3 {
             margin-top: map-get($map: $margins, $key: m1);
           }
@@ -107,27 +91,27 @@
         }
         .close-modal {
           @include size(100%, 100vh);
-          z-index: -1;
           position: absolute;
           top: 0;
           left: 0;
+          z-index: -1;
         }
       }
       .features__gym-features__listitem {
-        @include size(11.25rem, 15.5rem);
         @include flex(column nowrap, center, center);
         @include paddings(0, 1rem, 0, 1rem);
-        margin-top: map-get($map: $margins, $key: m2);
+        @include size(11.25rem, 15.5rem);
         background-color: map-get($map: $colors, $key: primary);
         border: thin solid map-get($map: $colors, $key: fff);
-        border-top: medium solid map-get($map: $colors, $key: fff);
-        text-align: $text-center;
-        border-radius: 0.25rem;
+        border-top: thick solid map-get($map: $colors, $key: fff);
+        border-radius: map-get($map: $border-radius, $key: b025);
         box-shadow: $shadow-default;
+        margin-top: map-get($map: $margins, $key: m2);
+        text-align: $text-center;
         p {
-          margin-top: map-get($map: $margins, $key: m05);
-          font-family: $font-heading;
           color: map-get($map: $colors, $key: fff);
+          font-family: $font-heading;
+          margin-top: map-get($map: $margins, $key: m05);
         }
       }
       .features__gym-features__lockers {
@@ -158,16 +142,16 @@
   }
   .information {
     /*Information Section*/
-    background-color: map-get($map: $colors, $key: terciary);
-    padding: $padding-section;
     @include flex(row wrap, space-between, flex-start);
+    background-color: map-get($map: $colors, $key: terciary);
     grid-area: information;
+    padding: $padding-section;
     .information__contact-information {
-      @include size(35%, 28.125rem);
       @include flex(column nowrap, center, center);
       @include paddings(0, 2rem, 0, 2rem);
+      @include size(35%, 28.125rem);
       background-color: #8d8d8d;
-      border-radius: 0.5rem;
+      border-radius: map-get($map: $border-radius, $key: b05);
       z-index: 1;
       h2 {
         margin-bottom: map-get($map: $margins, $key: m2);
@@ -176,14 +160,14 @@
       ul {
         padding: map-get($map: $paddings, $key: p0);
         li {
+          font-size: map-get($map: $font-sizes, $key: t125);
           margin-bottom: map-get($map: $margins, $key: m1);
           text-align: $text-center;
-          font-size: map-get($map: $font-sizes, $key: t125);
         }
       }
     }
     iframe {
-      border-radius: 0.5rem;
+      border-radius: map-get($map: $border-radius, $key: b05);
       box-shadow: $shadow-default;
     }
   }

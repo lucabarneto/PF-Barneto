@@ -6,7 +6,7 @@ $colors: (
   fff: white,
   000: black,
 );
-// hacer para margins, paddings, font-sizes, etc
+
 $margins: (
   m9: 9rem,
   m4: 4rem,
@@ -38,4 +38,9 @@ $font-sizes: (
   t125: 1.25rem,
   t1: 1rem,
   t075: 0.75rem,
+);
+
+$border-radius: (
+  b05: 0.5rem,
+  b025: 0.25rem,
 );

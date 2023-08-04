@@ -10,6 +10,11 @@
       content="From owning the latest gym equipment on the market to having exceptional staff, we at THUNDER Fitness are fully equipped to make your dreams of getting in shape come true."
     />
     <meta name="theme-color" content="#ffe600" />
+    <!-- Keywords -->
+    <meta
+      name="keywords"
+      content="Thunder Fitness, gimnasio, entrenar, salud, fuerza, boxing, crossfit, yoga, levantamiento de pesas, intenso, clases online"
+    />
     <!-- Favicon -->
     <link rel="icon" href="./img/favicon.webp" />
     <link rel="apple-touch-icon" href="./img/favicon.webp" />
@@ -225,55 +230,118 @@
           CHOOSE YOUR PLAN AND
           <span class="heading__text-decoration">START NOW</span>
         </h2>
+        <!-- Esto es un switch que hace que si tocas en cualquier boton del .plans__button-toggle-container te cambie el contenido (precio) de las cards -->
+        <input type="radio" name="btn-switch" id="btn-switch-monthly" checked />
+        <input type="radio" name="btn-switch" id="btn-switch-annually" />
         <div class="plans__button-toggle-container">
-          <button class="button--toggle">Monthly</button>
-          <button class="button--toggle button--off">Annually</button>
+          <label for="btn-switch-monthly" class="button--toggle btn-monthly"
+            >Monthly</label
+          >
+          <label for="btn-switch-annually" class="button--toggle btn-annually"
+            >Annually</label
+          >
         </div>
         <!-- Plan normal -->
         <div class="plans__gym-plan plans__normal-plan">
-          <strong class="plans__gym-plan__name">Normal Plan</strong>
-          <div class="plans__gym-plan__separator"></div>
-          <div class="plans__gym-plan__relevant-info">Price in USD</div>
-          <small>tax included</small>
-          <div>
-            <div class="plans__gym-plan__relevant-info">
-              <strong> What you'll get</strong>
+          <div class="plans__monthly">
+            <strong class="plans__gym-plan__name">Normal Plan</strong>
+            <div class="plans__gym-plan__separator"></div>
+            <div class="plans__gym-plan__relevant-info">30USD</div>
+            <small>tax included</small>
+            <div>
+              <div class="plans__gym-plan__relevant-info">
+                <strong> What you'll get</strong>
+              </div>
+              <ul type="none" class="plans__gym-plan__benefits">
+                <li>
+                  <i class="bi bi-check-lg bi-plans"></i>Access to the gym
+                </li>
+                <li><i class="bi bi-dash bi-plans"></i>Online Classes</li>
+                <li><i class="bi bi-dash bi-plans"></i>Boxing Classes</li>
+                <li><i class="bi bi-dash bi-plans"></i>Crossfit Classes</li>
+                <li><i class="bi bi-dash bi-plans"></i>Yoga Classes</li>
+              </ul>
             </div>
-            <ul type="none" class="plans__gym-plan__benefits">
-              <li><i class="bi bi-check-lg bi-plans"></i>Access to the gym</li>
-              <li><i class="bi bi-dash bi-plans"></i>Online Classes</li>
-              <li><i class="bi bi-dash bi-plans"></i>Boxing Classes</li>
-              <li><i class="bi bi-dash bi-plans"></i>Crossfit Classes</li>
-              <li><i class="bi bi-dash bi-plans"></i>Yoga Classes</li>
-            </ul>
+            <button class="button__plan">
+              <a href="" class="button--text-black"> Choose plan </a>
+            </button>
           </div>
-          <button class="button__plan">
-            <a href="" class="button--text-black"> Choose plan </a>
-          </button>
+          <div class="plans__annually">
+            <strong class="plans__gym-plan__name">Normal Plan</strong>
+            <div class="plans__gym-plan__separator"></div>
+            <div class="plans__gym-plan__relevant-info">300USD</div>
+            <small>tax included</small>
+            <div>
+              <div class="plans__gym-plan__relevant-info">
+                <strong> What you'll get</strong>
+              </div>
+              <ul type="none" class="plans__gym-plan__benefits">
+                <li>
+                  <i class="bi bi-check-lg bi-plans"></i>Access to the gym
+                </li>
+                <li><i class="bi bi-dash bi-plans"></i>Online Classes</li>
+                <li><i class="bi bi-dash bi-plans"></i>Boxing Classes</li>
+                <li><i class="bi bi-dash bi-plans"></i>Crossfit Classes</li>
+                <li><i class="bi bi-dash bi-plans"></i>Yoga Classes</li>
+              </ul>
+            </div>
+            <button class="button__plan">
+              <a href="" class="button--text-black"> Choose plan </a>
+            </button>
+          </div>
         </div>
         <!-- Plan premium -->
         <div class="plans__gym-plan plans__thunder-plan">
-          <strong class="plans__gym-plan__name"
-            ><span class="plans__thunder-plan__tag"> THUNDER </span> Plan
-          </strong>
-          <div class="plans__gym-plan__separator"></div>
-          <div class="plans__gym-plan__relevant-info">Price in USD</div>
-          <small>tax included</small>
-          <div>
-            <div class="plans__gym-plan__relevant-info">
-              <strong> What you'll get</strong>
+          <div class="plans__monthly">
+            <strong class="plans__gym-plan__name"
+              ><span class="plans__thunder-plan__tag"> THUNDER </span> Plan
+            </strong>
+            <div class="plans__gym-plan__separator"></div>
+            <div class="plans__gym-plan__relevant-info">45USD</div>
+            <small>tax included</small>
+            <div>
+              <div class="plans__gym-plan__relevant-info">
+                <strong> What you'll get</strong>
+              </div>
+              <ul type="none" class="plans__gym-plan__benefits">
+                <li>
+                  <i class="bi bi-check-lg bi-plans"></i>Access to the gym
+                </li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Online Classes</li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Boxing Classes</li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Crossfit Classes</li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Yoga Classes</li>
+              </ul>
             </div>
-            <ul type="none" class="plans__gym-plan__benefits">
-              <li><i class="bi bi-check-lg bi-plans"></i>Access to the gym</li>
-              <li><i class="bi bi-check-lg bi-plans"></i>Online Classes</li>
-              <li><i class="bi bi-check-lg bi-plans"></i>Boxing Classes</li>
-              <li><i class="bi bi-check-lg bi-plans"></i>Crossfit Classes</li>
-              <li><i class="bi bi-check-lg bi-plans"></i>Yoga Classes</li>
-            </ul>
+            <button class="button__plan">
+              <a href="" class="button--text-black"> Choose plan </a>
+            </button>
           </div>
-          <button class="button__plan">
-            <a href="" class="button--text-black"> Choose plan </a>
-          </button>
+          <div class="plans__annually">
+            <strong class="plans__gym-plan__name"
+              ><span class="plans__thunder-plan__tag"> THUNDER </span> Plan
+            </strong>
+            <div class="plans__gym-plan__separator"></div>
+            <div class="plans__gym-plan__relevant-info">450USD</div>
+            <small>tax included</small>
+            <div>
+              <div class="plans__gym-plan__relevant-info">
+                <strong> What you'll get</strong>
+              </div>
+              <ul type="none" class="plans__gym-plan__benefits">
+                <li>
+                  <i class="bi bi-check-lg bi-plans"></i>Access to the gym
+                </li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Online Classes</li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Boxing Classes</li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Crossfit Classes</li>
+                <li><i class="bi bi-check-lg bi-plans"></i>Yoga Classes</li>
+              </ul>
+            </div>
+            <button class="button__plan">
+              <a href="" class="button--text-black"> Choose plan </a>
+            </button>
+          </div>
         </div>
       </section>
     </main>
