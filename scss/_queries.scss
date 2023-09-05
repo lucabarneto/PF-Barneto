@@ -54,6 +54,9 @@
               @include size(auto, 3rem);
               .nav-link {
                 font-family: $font-heading;
+                &:hover {
+                  color: map-get($map: $colors, $key: accent);
+                }
               }
               .button--collapsed {
                 color: map-get($map: $colors, $key: primary);
@@ -112,6 +115,7 @@
           max-width: auto;
           img {
             @include size(100%, auto);
+            max-width: 22.5rem;
           }
           &:hover {
             transform: none;
@@ -163,6 +167,9 @@
         padding: $padding-mobile-section;
         .plans__button-toggle-container {
           @include size(10.75rem, 2.25rem);
+          label {
+            line-height: normal;
+          }
         }
         .plans__heading {
           margin-bottom: map-get($map: $margins, $key: m2);
@@ -171,16 +178,21 @@
           @include size(calc(100vw - 32px), 35rem);
           margin-top: map-get($map: $margins, $key: m2);
           max-width: 22.5rem;
-          .plans__gym-plan__separator {
-            @include size(calc(100% - 32px), 0.125rem);
-            margin-top: map-get($map: $margins, $key: m025);
-          }
-          .plans__gym-plan__name {
-            font-size: map-get($map: $font-sizes, $key: t175);
-          }
-          .plans__gym-plan__relevant-info {
-            font-size: map-get($map: $font-sizes, $key: t1);
-            margin-top: map-get($map: $margins, $key: m2);
+          .plans__monthly,
+          .plans__annually {
+            @include size(100%, auto);
+            .plans__gym-plan__separator {
+              @include margins(0.25rem, auto, 0, auto);
+              @include size(calc(100% - 32px), 0.125rem);
+              margin-top: map-get($map: $margins, $key: m025);
+            }
+            .plans__gym-plan__name {
+              font-size: map-get($map: $font-sizes, $key: t175);
+            }
+            .plans__gym-plan__relevant-info {
+              font-size: map-get($map: $font-sizes, $key: t15);
+              margin-top: map-get($map: $margins, $key: m2);
+            }
           }
         }
       }
@@ -287,7 +299,7 @@
           @include size(calc(100% - 16px), auto);
         }
         p {
-          @include size(10.1875rem, auto);
+          @include size(calc(100% - 16px), auto);
           padding: map-get($map: $paddings, $key: p025);
         }
       }
@@ -304,6 +316,9 @@
     .contact-form {
       /*Form*/
       @include paddings(0, 1rem, 5rem, 1rem);
+      form {
+        margin: map-get($map: $margins, $key: m0);
+      }
     }
   }
   /*Login*/
@@ -378,6 +393,8 @@
       .button__download__apple,
       .button__download__google {
         @include size(10rem, 4rem);
+        @include size(calc(100% - 8px), 4rem);
+        padding: map-get($map: $paddings, $key: p05);
       }
     }
     .schedule {
@@ -436,6 +453,11 @@
     );
     padding: $padding-mobile-section;
     .footer__social-media {
+      .footer__social-media__logo {
+        img {
+          @include size(100%, auto);
+        }
+      }
       .footer__social-media__media {
         @include margins(1.5rem, 0, 1.5rem, 0);
         a {
